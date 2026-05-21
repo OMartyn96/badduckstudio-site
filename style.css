@@ -1,0 +1,194 @@
+:root {
+  --bg: #f7f3eb;
+  --card: #ffffff;
+  --text: #1f2933;
+  --muted: #6b7280;
+  --accent: #9b5a2e;
+  --accent-dark: #2b1b12;
+  --border: #e5e7eb;
+  --soft: #fff8ef;
+  --soft-border: #ead7c2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+header {
+  background: var(--accent-dark);
+  color: white;
+  padding: 34px 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 34px;
+  line-height: 1.2;
+}
+
+header p {
+  margin: 8px 0 0;
+  color: #e5e7eb;
+}
+
+main {
+  max-width: 980px;
+  margin: 32px auto;
+  padding: 0 20px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 28px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.25;
+}
+
+h2 {
+  margin-top: 30px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 8px;
+}
+
+h2:first-child {
+  margin-top: 0;
+}
+
+a {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.meta {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.legal-links {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0;
+}
+
+.legal-links li {
+  margin: 14px 0;
+}
+
+.legal-links a {
+  display: block;
+  padding: 16px;
+  background: var(--soft);
+  border: 1px solid var(--soft-border);
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.legal-links a:hover {
+  background: #fff1df;
+}
+
+.button-row {
+  margin: 20px 0;
+}
+
+.button {
+  display: inline-block;
+  margin: 8px 8px 8px 0;
+  padding: 12px 18px;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+.button:hover {
+  opacity: 0.92;
+}
+
+.button.secondary {
+  background: var(--accent-dark);
+}
+
+.pdf-frame {
+  width: 100%;
+  height: 80vh;
+  min-height: 620px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: white;
+}
+
+.notice {
+  background: #fff8ef;
+  border: 1px solid #ead7c2;
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin: 18px 0;
+}
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  padding: 32px 20px;
+  font-size: 14px;
+}
+
+@media (max-width: 700px) {
+  header h1 {
+    font-size: 26px;
+  }
+
+  main {
+    margin: 20px auto;
+    padding: 0 12px;
+  }
+
+  .card {
+    padding: 18px;
+  }
+
+  .button {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .pdf-frame {
+    height: 70vh;
+    min-height: 480px;
+  }
+
+.pdf-fallback {
+  padding: 32px;
+  text-align: center;
+  background: white;
+  border-radius: 10px;
+}
+
+.pdf-fallback h2 {
+  border-bottom: none;
+  margin-top: 0;
+}
+}
