@@ -75,16 +75,10 @@
             <td>Consent and privacy flags passed through SDK configuration; device ad settings.</td>
           </tr>
           <tr>
-            <td>AppLovin, if enabled in the final configuration</td>
-            <td>Mediated ads, ad delivery, measurement and fraud prevention.</td>
-            <td>Advertising ID, device data, IP address, ad events, approximate location, privacy flags.</td>
-            <td>SDK privacy flags, consent/opt-out signals, device ad settings.</td>
-          </tr>
-          <tr>
             <td>PlayFab / Microsoft</td>
-            <td>Guest login, authentication, cloud saves, player data, leaderboards, purchase validation, account deletion.</td>
-            <td>PlayFab ID, authentication method, display name, gameplay progress, scores, inventory, purchase validation data.</td>
-            <td>Account settings, delete account flow, support/privacy requests.</td>
+            <td>Guest login, authentication, cloud saves, player data, leaderboards, player statistics, purchase validation, inventory, remove-ads entitlement, account deletion.</td>
+            <td>PlayFab ID, custom/guest ID, authentication method, display name, avatar/profile icon URL, gameplay progress, weekly/monthly scores, leaderboard entries, inventory, virtual currency, purchase validation data.</td>
+            <td>Account settings, delete account flow backed by PlayFab CloudScript, support/privacy requests.</td>
           </tr>
           <tr>
             <td>Google Play Services / Google Play Games</td>
@@ -100,9 +94,21 @@
           </tr>
           <tr>
             <td>Unity IAP and app-store payment systems</td>
-            <td>In-app purchases, entitlement validation, restore purchases, refund handling.</td>
-            <td>Purchase token, product ID, transaction status, entitlement information.</td>
+            <td>One-time in-app purchases, remove-ads purchase, entitlement validation, restore purchases, refund handling.</td>
+            <td>Purchase token, product ID, transaction status, receipt, entitlement information, remove_ads_permanent ownership state.</td>
             <td>App-store purchase history, refund process, restore purchases.</td>
+          </tr>
+          <tr>
+            <td>Unity Adaptive Performance for Android</td>
+            <td>Device performance optimisation on supported Android/Samsung devices.</td>
+            <td>Device performance and capability signals used locally or technically to optimise app performance.</td>
+            <td>Device settings and app permissions where applicable.</td>
+          </tr>
+          <tr>
+            <td>Technical Unity/local packages</td>
+            <td>Core game operation, localisation, input, rendering, UI, visual scripting, camera tools and text auto-sizing.</td>
+            <td>Normally no separate personal-data collection unless connected to another active service or custom logging.</td>
+            <td>Final build/package review; remove or disclose any package that sends data externally.</td>
           </tr>
         </tbody>
       </table>
@@ -132,7 +138,6 @@
       <li><a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></li>
       <li><a href="https://support.google.com/admob/answer/6128543" target="_blank">Google AdMob privacy information</a></li>
       <li><a href="https://unity.com/legal/privacy-policy" target="_blank">Unity Privacy Policy</a></li>
-      <li><a href="https://www.applovin.com/privacy/" target="_blank">AppLovin Privacy Policy</a></li>
       <li><a href="https://privacy.microsoft.com/privacystatement" target="_blank">Microsoft Privacy Statement</a></li>
       <li><a href="https://www.playfab.com/terms/" target="_blank">PlayFab terms and privacy resources</a></li>
       <li><a href="https://www.apple.com/legal/privacy/" target="_blank">Apple Privacy Policy</a></li>
@@ -144,7 +149,11 @@
       the final Unity project, mediation dashboard, AdMob configuration, app
       store data safety declarations and PlayFab configuration. Any SDK not used
       in the final build should be removed from this Notice, and any SDK used in
-      the final build should be added here before publication.
+      the final build should be added here before publication. Technical packages
+      such as Unity Localization, Input System, URP, Cinemachine, UGUI, Vector
+      Graphics, Visual Scripting and Kamgam text auto-sizing should still be
+      reviewed, but are not treated as independent data partners unless they send
+      data externally or are connected to another online service.
     </p>
     <nav class="document-nav" aria-label="Document actions"><a href="index.html">Back to index</a><a href="#top">Back to top</a><a href="parceiros-e-sdks.html">Ver em português</a></nav>
   </article>

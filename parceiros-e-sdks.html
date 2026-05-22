@@ -39,11 +39,12 @@
         <tbody>
           <tr><td>Google AdMob / Google</td><td>Anúncios, anúncios recompensados, medição, prevenção de fraude, ferramentas de consentimento.</td><td>ID publicitário, dados do dispositivo, IP, localização aproximada, eventos de anúncios, sinais de consentimento.</td><td>Google UMP/CMP, definições de anúncios do dispositivo, anúncios não personalizados quando disponíveis.</td></tr>
           <tr><td>Unity LevelPlay / Unity Ads</td><td>Mediação, entrega de anúncios, recompensados/intersticiais, medição.</td><td>ID publicitário, dispositivo, IP, eventos de anúncios, dados de interação, consent flags.</td><td>Flags de consentimento/privacidade no SDK e definições do dispositivo.</td></tr>
-          <tr><td>AppLovin, se ativo na configuração final</td><td>Anúncios mediados, entrega, medição e prevenção de fraude.</td><td>ID publicitário, dispositivo, IP, eventos de anúncios, localização aproximada, flags de privacidade.</td><td>Flags de privacidade do SDK, sinais de consentimento/opt-out e definições do dispositivo.</td></tr>
-          <tr><td>PlayFab / Microsoft</td><td>Login convidado, autenticação, nuvem, dados de jogador, rankings, validação de compras, eliminação de conta.</td><td>PlayFab ID, método de autenticação, nome apresentado, progresso, pontuações, inventário, dados de compra.</td><td>Definições de conta, fluxo de eliminação, pedidos de suporte/privacidade.</td></tr>
+          <tr><td>PlayFab / Microsoft</td><td>Login convidado, autenticação, nuvem, dados de jogador, rankings, estatísticas, validação de compras, inventário, direito remove ads e eliminação de conta.</td><td>PlayFab ID, custom/guest ID, método de autenticação, nome apresentado, avatar/URL de ícone, progresso, pontuações semanais/mensais, entradas de leaderboards, inventário, moeda virtual, dados de compra.</td><td>Definições de conta, fluxo de eliminação via PlayFab CloudScript, pedidos de suporte/privacidade.</td></tr>
           <tr><td>Google Play Services / Google Play Games</td><td>Login, conquistas, rankings, compras, integridade e serviços de plataforma.</td><td>ID de plataforma, perfil de jogo, conquistas, compras, sinais de dispositivo.</td><td>Definições da conta Google, Google Play e permissões.</td></tr>
           <tr><td>Apple App Store / Game Center / Sign in with Apple</td><td>Login, distribuição, compras, Game Center e controlos de privacidade.</td><td>ID Apple/plataforma, perfil Game Center, dados de compra, sinais de dispositivo.</td><td>Definições iOS, App Tracking Transparency, conta Apple.</td></tr>
-          <tr><td>Unity IAP e lojas</td><td>Compras na aplicação, validação de direitos, restauro e reembolsos.</td><td>Token de compra, produto, estado da transação, direitos.</td><td>Histórico da loja, processo de reembolso, restaurar compras.</td></tr>
+          <tr><td>Unity IAP e lojas</td><td>Compras únicas na aplicação, compra remove ads, validação de direitos, restauro e reembolsos.</td><td>Token de compra, produto, estado da transação, recibo, direitos e estado remove_ads_permanent.</td><td>Histórico da loja, processo de reembolso, restaurar compras.</td></tr>
+          <tr><td>Unity Adaptive Performance para Android</td><td>Otimização de desempenho em dispositivos Android/Samsung suportados.</td><td>Sinais técnicos de desempenho e capacidade do dispositivo usados localmente ou tecnicamente para otimizar desempenho.</td><td>Definições do dispositivo e permissões da app quando aplicável.</td></tr>
+          <tr><td>Pacotes técnicos Unity/locais</td><td>Funcionamento do jogo, localização, input, rendering, UI, visual scripting, câmara e auto-size de texto.</td><td>Normalmente sem recolha separada de dados pessoais, salvo se ligados a outro serviço ativo ou logging próprio.</td><td>Revisão do build/package final; remover ou declarar qualquer pacote que envie dados externamente.</td></tr>
         </tbody>
       </table>
     </div>
@@ -59,14 +60,13 @@
       <li><a href="https://policies.google.com/privacy" target="_blank">Política de Privacidade da Google</a></li>
       <li><a href="https://support.google.com/admob/answer/6128543" target="_blank">Informação de privacidade Google AdMob</a></li>
       <li><a href="https://unity.com/legal/privacy-policy" target="_blank">Política de Privacidade da Unity</a></li>
-      <li><a href="https://www.applovin.com/privacy/" target="_blank">Política de Privacidade da AppLovin</a></li>
       <li><a href="https://privacy.microsoft.com/privacystatement" target="_blank">Declaração de Privacidade Microsoft</a></li>
       <li><a href="https://www.playfab.com/terms/" target="_blank">Termos e recursos PlayFab</a></li>
       <li><a href="https://www.apple.com/legal/privacy/" target="_blank">Política de Privacidade da Apple</a></li>
     </ul>
 
     <h3>Verificação antes do lançamento</h3>
-    <p>Antes de lançar, a lista de SDKs deve ser comparada com o projeto Unity final, dashboard de mediação, configuração AdMob, declarações Google Play Data Safety, Apple Privacy Labels e PlayFab. Remova parceiros não usados e adicione qualquer parceiro ativo.</p>
+    <p>Antes de lançar, a lista de SDKs deve ser comparada com o projeto Unity final, dashboard de mediação, configuração AdMob, declarações Google Play Data Safety, Apple Privacy Labels e PlayFab. Remova parceiros não usados e adicione qualquer parceiro ativo. Pacotes técnicos como Unity Localization, Input System, URP, Cinemachine, UGUI, Vector Graphics, Visual Scripting e Kamgam text auto-sizing devem ser revistos, mas não são tratados como parceiros independentes de dados salvo se enviarem dados externamente ou estiverem ligados a outro serviço online.</p>
     <nav class="document-nav" aria-label="Document actions"><a href="index.html">Voltar ao index</a><a href="#top">Voltar ao topo</a><a href="partners-and-sdks.html">View in English</a></nav>
   </article>
 </main>

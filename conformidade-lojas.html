@@ -32,18 +32,21 @@
     <p class="meta">Data: 22 de maio de 2026<br>Aplicação: WordWildWest<br>Este documento é uma checklist operacional para submissão nas lojas.</p>
     <div class="button-row"><a class="button" href="docs/WordWildWest_Checklist_Google_Play_e_App_Store_PT.pdf" target="_blank">Abrir PDF</a><a class="button secondary" href="docs/WordWildWest_Checklist_Google_Play_e_App_Store_PT.pdf" download>Transferir PDF</a></div>
 
-    <div class="notice"><strong>Bloqueio atual:</strong> a aplicação permite criação/login de conta, mas ainda não tem botão dentro do jogo para apagar conta. Isto deve ser implementado antes da submissão à Google Play e App Store.</div>
+    <div class="notice"><strong>Bloqueio atual:</strong> a eliminação de conta parece existir ao nível PlayFab/CloudScript, mas a revisão das lojas continua a exigir um botão ou fluxo claro dentro da app que permita ao utilizador iniciar a eliminação da conta.</div>
 
     <h3>1. Dados confirmados pelo projeto</h3>
     <ul>
       <li>Conta: sim.</li>
       <li>Login: Google, Apple e PlayFab guest login.</li>
-      <li>Eliminar conta dentro do jogo: ainda não.</li>
+      <li>Eliminar conta dentro do jogo: parece existir CloudScript PlayFab; falta confirmar fluxo visível para o utilizador.</li>
       <li>AdMob: ativo.</li>
       <li>Unity LevelPlay: ativo.</li>
-      <li>AppLovin: não confirmado; tratar como ativo apenas se estiver ligado na mediação final.</li>
-      <li>Analytics/crash reporting extra: não confirmado.</li>
-      <li>PlayFab: cloud saves e leaderboards.</li>
+      <li>AppLovin: confirmado como desligado / não destinado a estar ativo na mediação final.</li>
+      <li>Analytics/crash reporting extra: nenhum SDK separado identificado nos packages listados; confirmar serviços Unity finais.</li>
+      <li>Pacotes técnicos/locais identificados: Unity Purchasing, Localization, Input System, URP, Cinemachine, Visual Scripting, UGUI, Vector Graphics, Adaptive Performance e Kamgam text auto-sizing; rever se algum pacote final envia telemetria externa.</li>
+      <li>PlayFab: cloud saves, leaderboards, estatísticas, inventário, entitlements e validação de compras.</li>
+      <li>Não há chat, nomes/perfis públicos ou conteúdo criado pelo utilizador.</li>
+      <li>Compras: compras únicas, incluindo Remove Ads. Sem subscrições.</li>
       <li>Público: inclui crianças, adolescentes e adultos.</li>
       <li>Objetivo de idade: faixa etária mais abrangente possível para jogo de palavras.</li>
     </ul>
@@ -52,19 +55,19 @@
     <p>A Google exige uma secção Data Safety clara e precisa para cada app. A declaração deve cobrir a soma das práticas de recolha/partilha da app, incluindo SDKs de terceiros, versões, regiões e idades.</p>
     <p>Para a WordWildWest, provavelmente será necessário declarar recolha/partilha relacionada com:</p>
     <ul>
-      <li>identificadores de utilizador/conta: PlayFab ID, Google/Apple ID de plataforma, display name;</li>
+      <li>identificadores de utilizador/conta: PlayFab ID, custom/guest ID, Google/Apple ID de plataforma, display name;</li>
       <li>email, se for recebido através de login, suporte ou recuperação;</li>
       <li>identificadores de dispositivo e advertising ID;</li>
       <li>IP, dados técnicos, app version e diagnóstico;</li>
-      <li>atividade na app: progresso, pontuação, conquistas, leaderboards, interações;</li>
-      <li>compras: produto, entitlement, token/validação de compra;</li>
+      <li>atividade na app: progresso, pontuação, estatísticas, conquistas, leaderboards, cloud saves, inventário, moeda virtual e interações;</li>
+      <li>compras: produto, receipt/token, validação de compra, entitlement e remove_ads_permanent;</li>
       <li>interações com anúncios e medição publicitária.</li>
     </ul>
     <p>Finalidades prováveis: funcionalidade da app, gestão de conta, analytics/diagnóstico se ativo, publicidade/marketing, prevenção de fraude, segurança e conformidade legal.</p>
 
     <h3>3. Google Play account deletion</h3>
     <p>Como a aplicação permite criação de conta, deve existir uma forma de iniciar eliminação de conta dentro da app. Também será necessário responder às perguntas de eliminação de dados no Play Console e disponibilizar informação coerente no site/política.</p>
-    <p>A implementação mínima recomendada: Settings > Account > Delete Account, com confirmação, aviso de perda de progresso/cloud saves/leaderboards/compras associadas, e chamada ao fluxo PlayFab ou pedido autenticado ao backend.</p>
+    <p>A implementação mínima recomendada: Settings > Account > Delete Account, com confirmação, aviso de perda de progresso/cloud saves/leaderboards/compras associadas, e chamada ao fluxo PlayFab CloudScript ou pedido autenticado ao backend.</p>
 
     <h3>4. Google Play target audience e Families</h3>
     <p>Como o público inclui crianças, a secção Target audience and content deve indicar faixas etárias que incluem crianças. Isso aciona requisitos da Families Policy, incluindo uso de SDKs de anúncios certificados para famílias quando forem servidos anúncios a crianças ou a utilizadores de idade desconhecida.</p>
@@ -88,8 +91,9 @@
     <h3>9. Antes da submissão</h3>
     <ul class="checklist">
       <li>Implementar botão de apagar conta dentro da app.</li>
-      <li>Confirmar SDKs reais no build final, incluindo analytics/crash reporting.</li>
-      <li>Confirmar se AppLovin está desativado na mediação final.</li>
+      <li>Confirmar SDKs e serviços Unity reais no build final, sobretudo se existe analytics/crash reporting ativo.</li>
+      <li>Confirmar que serviços do Unity Dashboard e manifests de packages coincidem com o Aviso de Parceiros e SDKs publicado.</li>
+      <li>Confirmar que AppLovin continua desativado na mediação final.</li>
       <li>Configurar consentimento UE/UK antes de AdMob/LevelPlay e qualquer SDK não essencial.</li>
       <li>Configurar tratamento infantil: anúncios não personalizados, SDKs permitidos, sem tracking comportamental.</li>
       <li>Preencher Google Play Data Safety com base no build real.</li>
