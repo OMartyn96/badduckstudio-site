@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Publication Compliance Checklist | WordWildWest</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+<body id="top">
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo-link" href="index.html" aria-label="Back to homepage">
+      <img src="assets/logo.png" alt="Bad Duck Studio logo" class="site-logo">
+    </a>
+    <div class="brand-text">
+      <h1>Bad Duck Studio</h1>
+      <p>Official legal documents for WordWildWest</p>
+    </div>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="index.html#english">English</a>
+      <a href="index.html#portugues">Português</a>
+      <a href="store-compliance.html">Store checklist</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <article class="card legal-document">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Index</a><span aria-hidden="true">-&gt;</span><span>Publication Compliance Checklist</span></nav>
+    <h2>Publication Compliance Checklist</h2>
+
+    <p class="meta">
+      Effective date: 22 May 2026<br>
+      Application: WordWildWest<br>
+      This checklist is operational guidance, not a user-facing contract.
+    </p>
+
+    <div class="button-row">
+      <a class="button" href="docs/WordWildWest_Publication_Compliance_Checklist_EN.pdf" target="_blank">Open PDF</a>
+      <a class="button secondary" href="docs/WordWildWest_Publication_Compliance_Checklist_EN.pdf" download>Download PDF</a>
+    </div>
+
+    <h3>1. Company details</h3>
+    <ul class="checklist">
+      <li>Confirm legal name: BAD DUCK STUDIO, LDA.</li>
+      <li>Confirm registered office: Rua das Acacias, 40A, 3090-380 Figueira da Foz, Portugal.</li>
+      <li>Confirm company registration / VAT number: PT 518249891.</li>
+      <li>Confirm public privacy contact and support mailbox.</li>
+      <li>Decide whether to create a dedicated privacy address such as privacy@badduckstudio.com.</li>
+    </ul>
+
+    <h3>2. App build verification</h3>
+    <ul class="checklist">
+      <li>List every SDK in the final Unity project.</li>
+      <li>Compare Unity packages with the Partners and SDKs Notice.</li>
+      <li>Confirm whether analytics/crash reporting is enabled.</li>
+      <li>Confirm every mediation partner enabled in Unity LevelPlay / AdMob dashboards.</li>
+      <li>Remove unused partner names from the published notice.</li>
+      <li>Add any active partner missing from the notice.</li>
+    </ul>
+
+    <h3>3. Consent implementation</h3>
+    <ul class="checklist">
+      <li>EU/EEA/UK/Switzerland: do not initialise non-essential ads, analytics or tracking before valid consent where required.</li>
+      <li>Implement Accept all, Reject non-essential and Manage choices.</li>
+      <li>Store consent version, region, timestamp and selected categories.</li>
+      <li>Provide a Settings screen to reopen consent choices.</li>
+      <li>Pass consent and opt-out flags to AdMob, Unity LevelPlay, AppLovin and other active SDKs.</li>
+      <li>Test rejection path: no personalised ads, no non-essential analytics, no unauthorised identifiers.</li>
+    </ul>
+
+    <h3>4. Children and age handling</h3>
+    <ul class="checklist">
+      <li>Current declared position: the game is a general-audience word game that may also be directed to or used by children.</li>
+      <li>Check app-store age rating, store screenshots, keywords, trailer and visual style.</li>
+      <li>For children under 13 or other local child thresholds: disable targeted ads unless valid parental consent and all required notices are in place.</li>
+      <li>Google Play: if the target audience includes children, comply with Families Policy and use only Families Self-Certified Ads SDKs for children and users of unknown age.</li>
+      <li>Apple: if children are a target audience, ensure age rating, privacy labels, ATT usage and account deletion flow match App Store rules.</li>
+      <li>For Brazil: review ECA Digital requirements and ANPD guidance before launch.</li>
+      <li>For UK: apply high privacy defaults if the app is likely to be accessed by under-18 users.</li>
+      <li>For Australia: monitor the Children's Online Privacy Code before and after it comes into force.</li>
+    </ul>
+
+    <h3>5. Store declarations</h3>
+    <ul class="checklist">
+      <li>Google Play Data Safety must match these documents and SDK behaviour.</li>
+      <li>Apple App Privacy labels must match these documents and SDK behaviour.</li>
+      <li>Account deletion URL and in-app deletion flow must be available if account creation is available.</li>
+      <li>AdMob/Google consent configuration must match regions where ads are served.</li>
+    </ul>
+
+    <h3>6. Regional publishing</h3>
+    <ul class="checklist">
+      <li>EU/Portugal: confirm CNPD reference, ADR/Livro de Reclamacoes applicability and consent flow.</li>
+      <li>Brazil: confirm LGPD rights channel and ECA Digital position.</li>
+      <li>US: confirm whether "Do Not Sell or Share" / targeted advertising opt-out is needed.</li>
+      <li>UK: confirm PECR and Children's Code compliance position.</li>
+      <li>Australia: confirm APP coverage and overseas disclosure language.</li>
+      <li>New Zealand: confirm indirect collection notice and overseas disclosure language.</li>
+    </ul>
+
+    <h3>7. Final legal review</h3>
+    <ul class="checklist">
+      <li>Have a Portuguese lawyer confirm Portuguese consumer, ADR and Livro de Reclamacoes obligations.</li>
+      <li>Have privacy counsel review GDPR/UK GDPR/PECR consent implementation if serving ads in Europe.</li>
+      <li>Have Brazil counsel review LGPD/ECA Digital if Brazil is a target market.</li>
+      <li>Re-run this checklist after each SDK, monetisation or data-flow change.</li>
+    </ul>
+    <nav class="document-nav" aria-label="Document actions"><a href="index.html">Back to index</a><a href="#top">Back to top</a></nav>
+  </article>
+</main>
+
+<footer>
+  <div class="footer-inner">© 2026 BAD DUCK STUDIO, LDA. All rights reserved.</div>
+</footer>
+
+</body>
+</html>
+
+
+

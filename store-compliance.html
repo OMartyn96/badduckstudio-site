@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Google Play and App Store Compliance Checklist | WordWildWest</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+<body id="top">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo-link" href="index.html" aria-label="Back to homepage">
+      <img src="assets/logo.png" alt="Bad Duck Studio logo" class="site-logo">
+    </a>
+    <div class="brand-text">
+      <h1>Bad Duck Studio</h1>
+      <p>Official legal documents for WordWildWest</p>
+    </div>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="index.html#english">English</a>
+      <a href="index.html#portugues">Português</a>
+      <a href="store-compliance.html">Store checklist</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <article class="card legal-document">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Index</a><span aria-hidden="true">-&gt;</span><span>Google Play and App Store Compliance Checklist</span></nav>
+    <h2>Google Play and App Store Compliance Checklist</h2>
+    <p class="meta">Date: 22 May 2026<br>Application: WordWildWest<br>This document is an operational checklist for store submission.</p>
+    <div class="button-row"><a class="button" href="docs/WordWildWest_Google_Play_and_App_Store_Compliance_Checklist_EN.pdf" target="_blank">Open PDF</a><a class="button secondary" href="docs/WordWildWest_Google_Play_and_App_Store_Compliance_Checklist_EN.pdf" download>Download PDF</a></div>
+
+    <div class="notice"><strong>Current blocker:</strong> the app supports account creation/login but does not yet include an in-app account deletion button. This should be implemented before Google Play and App Store submission.</div>
+
+    <h3>1. Confirmed project facts</h3>
+    <ul>
+      <li>Account: yes.</li>
+      <li>Login: Google, Apple and PlayFab guest login.</li>
+      <li>In-app account deletion: not yet.</li>
+      <li>AdMob: active.</li>
+      <li>Unity LevelPlay: active.</li>
+      <li>AppLovin: not confirmed; treat as active only if enabled in final mediation.</li>
+      <li>Extra analytics/crash reporting: not confirmed.</li>
+      <li>PlayFab: cloud saves and leaderboards.</li>
+      <li>Audience: includes children, teenagers and adults.</li>
+      <li>Age goal: broadest suitable age range for a word game.</li>
+    </ul>
+
+    <h3>2. Google Play Data Safety</h3>
+    <p>Google requires an accurate Data safety section for each app. It must cover the app's data collection, sharing and security practices, including third-party SDKs, versions, regions and user ages.</p>
+    <p>WordWildWest will likely need disclosures for account/platform identifiers, email if collected, device identifiers, advertising ID, IP address, technical data, gameplay activity, progress, scores, leaderboards, purchases, entitlements, ad interactions and diagnostics if enabled.</p>
+
+    <h3>3. Google Play account deletion</h3>
+    <p>Because the app supports account creation, it should provide an in-app way to initiate account deletion. The recommended minimum is Settings > Account > Delete Account, with confirmation, warning about loss of progress/cloud saves/leaderboards/account entitlements, and a PlayFab/backend deletion request.</p>
+
+    <h3>4. Google Play target audience and Families</h3>
+    <p>Because the target audience includes children, the Play Console target audience section should include child age groups. This triggers Families Policy requirements, including use of Families Self-Certified Ads SDKs when serving ads to children or users of unknown age.</p>
+    <p>Recommended configuration: non-personalised ads for children and unknown-age users, age-appropriate ad rating, no behavioural tracking for children and confirmation that all child-facing ad SDKs are permitted.</p>
+
+    <h3>5. Apple App Privacy Labels</h3>
+    <p>App Store Connect requires App Privacy Details describing data types collected, whether linked to users, purposes and tracking. Prepare answers for identifiers, display name/profile, usage data, diagnostics, purchases, coarse location via IP, contact info if email is collected, advertising data and gameplay/account data.</p>
+
+    <h3>6. Apple ATT and tracking</h3>
+    <p>If the app collects data and shares it with other companies for cross-app/site tracking, or uses IDFA for personalised advertising, it must use App Tracking Transparency before tracking. If the app does not track on iOS, remove IDFA/NSUserTrackingUsageDescription and configure SDKs accordingly.</p>
+
+    <h3>7. Apple account deletion</h3>
+    <p>Apps that support account creation must let users initiate account deletion within the app. Email-only deletion is not enough for store review.</p>
+
+    <h3>8. Age rating</h3>
+    <p>Complete store age-rating questionnaires based on the actual content: word game, ads, purchases, online features, leaderboards, login, user-generated content if any and user interaction if any. To keep a broad age range, avoid free chat, unmoderated user content, inappropriate ads, behavioural tracking for children and manipulative purchase pressure.</p>
+
+    <h3>9. Before submission</h3>
+    <ul class="checklist">
+      <li>Implement in-app account deletion.</li>
+      <li>Confirm final SDKs, including analytics/crash reporting.</li>
+      <li>Confirm whether AppLovin is disabled in final mediation.</li>
+      <li>Gate EU/UK consent before AdMob, LevelPlay and other non-essential SDKs.</li>
+      <li>Configure child handling: non-personalised ads, permitted SDKs, no child behavioural tracking.</li>
+      <li>Complete Google Play Data Safety from the real build.</li>
+      <li>Complete Apple App Privacy Labels from the real build.</li>
+      <li>Validate age rating and target audience.</li>
+      <li>Ensure published policies match the app exactly.</li>
+    </ul>
+    <nav class="document-nav" aria-label="Document actions"><a href="index.html">Back to index</a><a href="#top">Back to top</a><a href="conformidade-lojas.html">Ver em português</a></nav>
+  </article>
+</main>
+<footer><div class="footer-inner">© 2026 BAD DUCK STUDIO, LDA. All rights reserved.</div></footer>
+</body>
+</html>
+
+
+

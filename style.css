@@ -39,6 +39,18 @@ body {
   display: flex;
   align-items: center;
   gap: 18px;
+  flex-wrap: wrap;
+}
+
+.logo-link {
+  display: inline-flex;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+.logo-link:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 4px;
 }
 
 .site-logo {
@@ -64,6 +76,30 @@ body {
   font-size: 16px;
 }
 
+.site-nav {
+  margin-left: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.site-nav a {
+  color: #ffffff;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  background: rgba(255, 255, 255, 0.12);
+  opacity: 1;
+}
+
 main {
   max-width: 980px;
   margin: 32px auto;
@@ -73,14 +109,15 @@ main {
 .card {
   background: var(--card);
   border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: 8px;
   padding: 28px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
 }
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   line-height: 1.25;
 }
 
@@ -93,6 +130,15 @@ h2 {
 
 h2:first-child {
   margin-top: 0;
+}
+
+h3 {
+  margin-top: 28px;
+  color: var(--accent-dark);
+}
+
+h4 {
+  margin: 20px 0 8px;
 }
 
 a {
@@ -125,9 +171,21 @@ a:hover {
   padding: 16px;
   background: var(--soft);
   border: 1px solid var(--soft-border);
-  border-radius: 12px;
+  border-radius: 8px;
   text-decoration: none;
   color: var(--accent-dark);
+}
+
+.legal-links span {
+  display: block;
+  font-weight: 700;
+}
+
+.legal-links small {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-weight: 400;
 }
 
 .legal-links a:hover {
@@ -146,7 +204,7 @@ a:hover {
   background: var(--accent);
   color: white;
   text-decoration: none;
-  border-radius: 10px;
+  border-radius: 8px;
   font-weight: 700;
 }
 
@@ -163,14 +221,14 @@ a:hover {
   height: 80vh;
   min-height: 620px;
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 8px;
   background: white;
 }
 
 .notice {
   background: var(--soft);
   border: 1px solid var(--soft-border);
-  border-radius: 12px;
+  border-radius: 8px;
   padding: 14px 16px;
   margin: 18px 0;
 }
@@ -179,7 +237,7 @@ a:hover {
   padding: 32px;
   text-align: center;
   background: white;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 .pdf-fallback h2 {
@@ -199,10 +257,131 @@ footer {
   margin: 0 auto;
 }
 
+.breadcrumb {
+  margin-top: 0;
+  font-size: 14px;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  padding: 10px 12px;
+  background: var(--soft);
+  border: 1px solid var(--soft-border);
+  border-radius: 8px;
+  margin-bottom: 18px;
+}
+
+.breadcrumb a {
+  color: var(--accent-dark);
+  text-decoration: none;
+}
+
+.breadcrumb span:last-child {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.legal-document {
+  max-width: 980px;
+}
+
+.legal-document ul {
+  padding-left: 22px;
+}
+
+.legal-document li {
+  margin: 8px 0;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  margin: 18px 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 760px;
+}
+
+th,
+td {
+  border: 1px solid var(--border);
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background: var(--soft);
+  color: var(--accent-dark);
+}
+
+.checklist li {
+  list-style: square;
+}
+
+.document-nav {
+  margin-top: 34px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.document-nav a {
+  display: inline-block;
+  padding: 10px 12px;
+  border: 1px solid var(--soft-border);
+  background: var(--soft);
+  border-radius: 8px;
+  color: var(--accent-dark);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+@media print {
+  body {
+    background: #ffffff;
+  }
+
+  .site-header,
+  footer,
+  .button-row,
+  .breadcrumb,
+  .document-nav {
+    display: none;
+  }
+
+  main {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .card {
+    border: none;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  a {
+    color: #000000;
+    text-decoration: none;
+  }
+}
+
 @media (max-width: 700px) {
   .header-inner {
     flex-direction: column;
     text-align: center;
+  }
+
+  .site-nav {
+    margin-left: 0;
+    justify-content: center;
   }
 
   .site-logo {

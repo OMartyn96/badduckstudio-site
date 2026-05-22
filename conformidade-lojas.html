@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Checklist Google Play e App Store | WordWildWest</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+<body id="top">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo-link" href="index.html" aria-label="Voltar à página inicial">
+      <img src="assets/logo.png" alt="Logótipo da Bad Duck Studio" class="site-logo">
+    </a>
+    <div class="brand-text">
+      <h1>Bad Duck Studio</h1>
+      <p>Documentos legais oficiais da WordWildWest</p>
+    </div>
+    <nav class="site-nav" aria-label="Navegação principal">
+      <a href="index.html">Início</a>
+      <a href="index.html#english">English</a>
+      <a href="index.html#portugues">Português</a>
+      <a href="conformidade-lojas.html">Checklist lojas</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <article class="card legal-document">
+    <nav class="breadcrumb" aria-label="Percurso"><a href="index.html">Index</a><span aria-hidden="true">-&gt;</span><span>Checklist Google Play e App Store</span></nav>
+    <h2>Checklist Google Play e App Store</h2>
+    <p class="meta">Data: 22 de maio de 2026<br>Aplicação: WordWildWest<br>Este documento é uma checklist operacional para submissão nas lojas.</p>
+    <div class="button-row"><a class="button" href="docs/WordWildWest_Checklist_Google_Play_e_App_Store_PT.pdf" target="_blank">Abrir PDF</a><a class="button secondary" href="docs/WordWildWest_Checklist_Google_Play_e_App_Store_PT.pdf" download>Transferir PDF</a></div>
+
+    <div class="notice"><strong>Bloqueio atual:</strong> a aplicação permite criação/login de conta, mas ainda não tem botão dentro do jogo para apagar conta. Isto deve ser implementado antes da submissão à Google Play e App Store.</div>
+
+    <h3>1. Dados confirmados pelo projeto</h3>
+    <ul>
+      <li>Conta: sim.</li>
+      <li>Login: Google, Apple e PlayFab guest login.</li>
+      <li>Eliminar conta dentro do jogo: ainda não.</li>
+      <li>AdMob: ativo.</li>
+      <li>Unity LevelPlay: ativo.</li>
+      <li>AppLovin: não confirmado; tratar como ativo apenas se estiver ligado na mediação final.</li>
+      <li>Analytics/crash reporting extra: não confirmado.</li>
+      <li>PlayFab: cloud saves e leaderboards.</li>
+      <li>Público: inclui crianças, adolescentes e adultos.</li>
+      <li>Objetivo de idade: faixa etária mais abrangente possível para jogo de palavras.</li>
+    </ul>
+
+    <h3>2. Google Play Data Safety</h3>
+    <p>A Google exige uma secção Data Safety clara e precisa para cada app. A declaração deve cobrir a soma das práticas de recolha/partilha da app, incluindo SDKs de terceiros, versões, regiões e idades.</p>
+    <p>Para a WordWildWest, provavelmente será necessário declarar recolha/partilha relacionada com:</p>
+    <ul>
+      <li>identificadores de utilizador/conta: PlayFab ID, Google/Apple ID de plataforma, display name;</li>
+      <li>email, se for recebido através de login, suporte ou recuperação;</li>
+      <li>identificadores de dispositivo e advertising ID;</li>
+      <li>IP, dados técnicos, app version e diagnóstico;</li>
+      <li>atividade na app: progresso, pontuação, conquistas, leaderboards, interações;</li>
+      <li>compras: produto, entitlement, token/validação de compra;</li>
+      <li>interações com anúncios e medição publicitária.</li>
+    </ul>
+    <p>Finalidades prováveis: funcionalidade da app, gestão de conta, analytics/diagnóstico se ativo, publicidade/marketing, prevenção de fraude, segurança e conformidade legal.</p>
+
+    <h3>3. Google Play account deletion</h3>
+    <p>Como a aplicação permite criação de conta, deve existir uma forma de iniciar eliminação de conta dentro da app. Também será necessário responder às perguntas de eliminação de dados no Play Console e disponibilizar informação coerente no site/política.</p>
+    <p>A implementação mínima recomendada: Settings > Account > Delete Account, com confirmação, aviso de perda de progresso/cloud saves/leaderboards/compras associadas, e chamada ao fluxo PlayFab ou pedido autenticado ao backend.</p>
+
+    <h3>4. Google Play target audience e Families</h3>
+    <p>Como o público inclui crianças, a secção Target audience and content deve indicar faixas etárias que incluem crianças. Isso aciona requisitos da Families Policy, incluindo uso de SDKs de anúncios certificados para famílias quando forem servidos anúncios a crianças ou a utilizadores de idade desconhecida.</p>
+    <p>Recomendação: configurar anúncios para crianças/idade desconhecida como não personalizados, com rating adequado e sem tracking comportamental. Confirmar se todos os SDKs de anúncios usados para crianças são permitidos pela Google Play Families Policy.</p>
+
+    <h3>5. Apple App Privacy Labels</h3>
+    <p>A Apple exige App Privacy Details no App Store Connect, incluindo tipos de dados recolhidos, se estão ligados ao utilizador, finalidades e se são usados para tracking.</p>
+    <p>Para a WordWildWest, preparar respostas para: identifiers, user content/profile/display name, usage data, diagnostics, purchases, coarse location via IP, contact info se email for recolhido, advertising data e gameplay/account data.</p>
+
+    <h3>6. Apple ATT e tracking</h3>
+    <p>Se a aplicação recolher dados e os partilhar com outras empresas para tracking entre apps/sites, ou usar IDFA para publicidade personalizada, deve usar App Tracking Transparency antes desse tracking. Para crianças ou contas infantis, a disponibilidade de tracking é limitada pelas regras da Apple.</p>
+    <p>Se a app não for usar tracking no iOS, remover IDFA/NSUserTrackingUsageDescription e configurar SDKs para não fazer tracking. Se for usar tracking, implementar ATT e alinhar com consentimento UE/UK quando aplicável.</p>
+
+    <h3>7. Apple account deletion</h3>
+    <p>Apps que suportam criação de conta devem permitir iniciar eliminação de conta dentro da app. O fluxo não deve ser apenas por email. Pode haver passos de confirmação e retenção de dados legalmente necessária, mas o utilizador deve conseguir iniciar o processo dentro da app.</p>
+
+    <h3>8. Classificação etária</h3>
+    <p>Preencher os questionários de classificação etária nas lojas de acordo com conteúdo real: jogo de palavras, anúncios, compras, funcionalidades online, leaderboards, login, conteúdo gerado por utilizadores se existir e interação entre utilizadores se existir.</p>
+    <p>Para manter faixa etária ampla, evitar chat livre, conteúdo gerado por utilizadores não moderado, anúncios inadequados, tracking comportamental de crianças e compras com pressão indevida.</p>
+
+    <h3>9. Antes da submissão</h3>
+    <ul class="checklist">
+      <li>Implementar botão de apagar conta dentro da app.</li>
+      <li>Confirmar SDKs reais no build final, incluindo analytics/crash reporting.</li>
+      <li>Confirmar se AppLovin está desativado na mediação final.</li>
+      <li>Configurar consentimento UE/UK antes de AdMob/LevelPlay e qualquer SDK não essencial.</li>
+      <li>Configurar tratamento infantil: anúncios não personalizados, SDKs permitidos, sem tracking comportamental.</li>
+      <li>Preencher Google Play Data Safety com base no build real.</li>
+      <li>Preencher Apple App Privacy Labels com base no build real.</li>
+      <li>Validar classificação etária e target audience.</li>
+      <li>Garantir que as políticas publicadas correspondem exatamente ao comportamento do jogo.</li>
+    </ul>
+    <nav class="document-nav" aria-label="Document actions"><a href="index.html">Voltar ao index</a><a href="#top">Voltar ao topo</a><a href="store-compliance.html">View in English</a></nav>
+  </article>
+</main>
+<footer><div class="footer-inner">© 2026 BAD DUCK STUDIO, LDA. Todos os direitos reservados.</div></footer>
+</body>
+</html>
+
+
+

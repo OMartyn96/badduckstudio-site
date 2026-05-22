@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -7,57 +7,200 @@
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="assets/logo.png">
 </head>
-<body>
+<body id="top">
 
 <header class="site-header">
   <div class="header-inner">
-    <img src="assets/logo.png" alt="Bad Duck Studio logo" class="site-logo">
-
+    <a class="logo-link" href="index.html" aria-label="Back to homepage">
+      <img src="assets/logo.png" alt="Bad Duck Studio logo" class="site-logo">
+    </a>
     <div class="brand-text">
       <h1>Bad Duck Studio</h1>
       <p>Official legal documents for WordWildWest</p>
     </div>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="index.html#english">English</a>
+      <a href="index.html#portugues">Português</a>
+      <a href="store-compliance.html">Store checklist</a>
+    </nav>
   </div>
 </header>
+
 <main>
-  <section class="card">
+  <article class="card legal-document">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Index</a><span aria-hidden="true">-&gt;</span><span>Cookie and Similar Technologies Policy</span></nav>
+    <h2>Cookie and Similar Technologies Policy</h2>
+
     <p class="meta">
       Effective date: 22 May 2026<br>
       Application: WordWildWest<br>
       Service Provider: BAD DUCK STUDIO, LDA<br>
-      Contact: contact@badduckstudio.com
-    </p>
-
-    <p>
-      You can view the Cookie and Similar Technologies Policy below, open it in
-      a new tab, or download the PDF file.
+      Contact: <a href="mailto:contact@badduckstudio.com">contact@badduckstudio.com</a>
     </p>
 
     <div class="button-row">
-      <a class="button" href="docs/WordWildWest_Cookie_and_Similar_Technologies_Policy_EN.pdf" target="_blank">
-        Open PDF
-      </a>
-
-      <a class="button secondary" href="docs/WordWildWest_Cookie_and_Similar_Technologies_Policy_EN.pdf" download>
-        Download PDF
-      </a>
+      <a class="button" href="docs/WordWildWest_Cookie_and_Similar_Technologies_Policy_EN.pdf" target="_blank">Open PDF</a>
+      <a class="button secondary" href="docs/WordWildWest_Cookie_and_Similar_Technologies_Policy_EN.pdf" download>Download PDF</a>
     </div>
 
-    <iframe
-      class="pdf-frame"
-      src="docs/WordWildWest_Cookie_and_Similar_Technologies_Policy_EN.pdf"
-      title="WordWildWest Cookie and Similar Technologies Policy PDF">
-    </iframe>
-
+    <h3>1. Introduction</h3>
     <p>
-      <a href="index.html">Back to legal documents</a>
+      This Policy explains how WordWildWest uses cookies, software development
+      kits, advertising identifiers, device identifiers, local storage, pixels,
+      tags, SDK signals, consent strings and similar technologies (together,
+      "Technologies").
     </p>
-  </section>
+    <p>
+      WordWildWest is a mobile application and may not use browser cookies in
+      the same way as a website. However, mobile SDKs and platform services may
+      access or store information on your device, including local storage,
+      PlayerPrefs, advertising IDs, app instance identifiers, device signals and
+      consent preferences.
+    </p>
+
+    <h3>2. Technologies used in the Application</h3>
+    <ul>
+      <li><strong>SDKs:</strong> code provided by third-party services for advertising, analytics, backend, authentication, purchases and platform functionality.</li>
+      <li><strong>Advertising identifiers:</strong> Android Advertising ID, Apple IDFA or similar identifiers where available and permitted.</li>
+      <li><strong>Device identifiers:</strong> technical identifiers used for operation, security, diagnostics, analytics, fraud prevention or ad delivery.</li>
+      <li><strong>Local storage:</strong> information stored on your device to remember settings, progress, preferences, save data or consent choices.</li>
+      <li><strong>Analytics and performance technologies:</strong> tools that help us understand app performance, crashes, usage and technical issues.</li>
+      <li><strong>Advertising technologies:</strong> tools used to deliver, limit, measure or personalise ads.</li>
+      <li><strong>Security and fraud prevention technologies:</strong> tools used to detect misuse, cheating, fraud, unauthorised activity or invalid ad traffic.</li>
+    </ul>
+
+    <h3>3. Why we use these Technologies</h3>
+    <h4>3.1 Strictly necessary Technologies</h4>
+    <p>
+      These are required for the Application to function, provide requested
+      features, maintain security, remember essential settings, authenticate
+      users, enable purchases, support cloud saves, prevent fraud and keep the
+      service operational. They do not usually require prior consent, but are
+      described here for transparency.
+    </p>
+
+    <h4>3.2 Preferences</h4>
+    <p>
+      These remember choices such as language, region, audio settings, gameplay
+      settings, accessibility preferences and consent choices. Consent may be
+      required where they are not strictly necessary.
+    </p>
+
+    <h4>3.3 Analytics and diagnostics</h4>
+    <p>
+      These help diagnose crashes, improve performance, fix bugs, test features
+      and optimise the user experience. Where analytics are not strictly
+      necessary, we request consent where required by applicable law.
+    </p>
+
+    <h4>3.4 Advertising and ad measurement</h4>
+    <p>
+      WordWildWest displays advertisements, including interstitial and rewarded
+      ads. Advertising Technologies help display ads, limit how often you see
+      the same ad, measure ad performance, detect fraud, prevent invalid traffic
+      and report aggregate advertising results.
+    </p>
+
+    <h4>3.5 Personalised advertising</h4>
+    <p>
+      Personalised advertising may use advertising identifiers, app activity,
+      approximate location, device information or ad interactions to show ads
+      that may be more relevant to you. Where required by law, personalised
+      advertising is used only after obtaining valid consent or another lawful
+      basis permitted by law. If you reject personalised advertising, the
+      Application may still show contextual or non-personalised ads.
+    </p>
+
+    <h3>4. Main providers</h3>
+    <p>The Application may use Technologies from providers including:</p>
+    <ul>
+      <li>Unity LevelPlay and Unity Ads;</li>
+      <li>Google AdMob and Google Play services;</li>
+      <li>AppLovin, if enabled in the final mediation configuration;</li>
+      <li>PlayFab / Microsoft services;</li>
+      <li>Apple services, App Store, Game Center and Sign in with Apple;</li>
+      <li>Unity IAP and applicable app-store payment systems.</li>
+    </ul>
+    <p>
+      More detailed provider information and policy links are available in the
+      <a href="partners-and-sdks.html">Partners and SDKs Notice</a>.
+    </p>
+
+    <h3>5. Consent and control</h3>
+    <p>
+      Where required by law, we ask for consent before using non-essential
+      Technologies, including personalised advertising, certain analytics,
+      behavioural tracking, ad measurement and SDK access/storage that is not
+      strictly necessary.
+    </p>
+    <p>
+      You may be offered options such as Accept all, Reject non-essential,
+      Manage choices, or a choice between personalised and non-personalised
+      advertising. You can withdraw or change consent through the Application
+      settings, consent management interface, device settings or other mechanisms
+      made available in the Application.
+    </p>
+    <p>
+      In the EU, EEA, United Kingdom and Switzerland, non-essential advertising,
+      analytics and tracking SDKs should not run before valid consent is obtained
+      where consent is required. Consent records may be retained to demonstrate
+      compliance and respect your choices.
+    </p>
+
+    <h3>6. Device and platform controls</h3>
+    <p>You may be able to manage advertising and tracking choices through your device or platform settings, including:</p>
+    <ul>
+      <li>resetting or deleting your advertising identifier;</li>
+      <li>limiting ad personalisation;</li>
+      <li>disabling app tracking permissions on iOS;</li>
+      <li>managing privacy settings in Android or iOS;</li>
+      <li>managing Google or Apple account privacy settings;</li>
+      <li>using privacy controls offered by advertising partners.</li>
+    </ul>
+
+    <h3>7. Effects of rejecting or withdrawing consent</h3>
+    <p>
+      If you reject or withdraw consent, some features may be limited, less
+      personalised or less reliable. You may still see ads, but they may be
+      contextual or non-personalised. Strictly necessary Technologies may remain
+      active to provide requested features, secure the Application, store consent
+      choices, process purchases, prevent fraud and keep the service operational.
+    </p>
+
+    <h3>8. Retention</h3>
+    <p>
+      Retention periods vary by Technology and provider. Preference and consent
+      data may be stored until changed, reset or deleted by you. Diagnostic data
+      may be retained for up to 24 months. Advertising and consent records may
+      be retained as necessary to respect choices, prevent fraud and demonstrate
+      compliance. Third-party providers may apply their own retention periods.
+    </p>
+
+    <h3>9. Changes to this Policy</h3>
+    <p>
+      We may update this Policy if our Technologies, SDKs, partners or legal
+      obligations change. For material changes affecting consent-based
+      Technologies, we will request renewed consent where required by law.
+    </p>
+
+    <h3>10. Contact</h3>
+    <p>
+      BAD DUCK STUDIO, LDA<br>
+      Rua das Acacias, 40A, 3090-380 Figueira da Foz, Portugal<br>
+      Company registration / VAT number: PT 518249891<br>
+      Email: <a href="mailto:contact@badduckstudio.com">contact@badduckstudio.com</a>
+    </p>
+    <nav class="document-nav" aria-label="Document actions"><a href="index.html">Back to index</a><a href="#top">Back to top</a><a href="politica-de-cookies.html">Ver em português</a></nav>
+  </article>
 </main>
 
 <footer>
-  © 2026 BAD DUCK STUDIO, LDA. All rights reserved.
+  <div class="footer-inner">© 2026 BAD DUCK STUDIO, LDA. All rights reserved.</div>
 </footer>
 
 </body>
 </html>
+
+
+
