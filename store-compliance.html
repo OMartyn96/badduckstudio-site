@@ -32,7 +32,7 @@
     <p class="meta">Date: 22 May 2026<br>Application: WordWildWest<br>This document is an operational checklist for store submission.</p>
     <div class="button-row"><a class="button" href="docs/WordWildWest_Google_Play_and_App_Store_Compliance_Checklist_EN.pdf" target="_blank">Open PDF</a><a class="button secondary" href="docs/WordWildWest_Google_Play_and_App_Store_Compliance_Checklist_EN.pdf" download>Download PDF</a></div>
 
-    <div class="notice"><strong>Current blocker:</strong> account deletion appears to exist at PlayFab/CloudScript level, but store review still requires a clear in-app button or flow that lets the user initiate account deletion from inside the app.</div>
+    <div class="notice"><strong>High-priority legal/store item:</strong> account deletion appears to exist at PlayFab/CloudScript level, but the final release still needs a clear user-facing deletion path and a public web deletion link that matches Google Play and Apple disclosures.</div>
 
     <h3>1. Confirmed project facts</h3>
     <ul>
@@ -42,7 +42,11 @@
       <li>AdMob: active.</li>
       <li>Unity LevelPlay: active.</li>
       <li>AppLovin: confirmed disabled / not intended to be active in final mediation.</li>
-      <li>Extra analytics/crash reporting: no separate SDK identified in the listed packages; confirm final Unity services.</li>
+      <li>Unity Analytics: project settings indicate analytics may be enabled; confirm whether Unity Analytics or any Unity dashboard telemetry enters the final build.</li>
+      <li>Crash reporting: appears off in the audit, but confirm final Unity services.</li>
+      <li>Notifications: local Android notifications for lives/cooldowns appear in the project.</li>
+      <li>Support form: EmailJS support form appears as a potential integration; disclose only if credentials/final configuration make it active.</li>
+      <li>Guest identifier: guest login may use a generated ID or device-derived identifier; device-derived identifiers should be minimised and disclosed as device identifiers.</li>
       <li>Technical/local packages identified: Unity Purchasing, Localization, Input System, URP, Cinemachine, Visual Scripting, UGUI, Vector Graphics, Adaptive Performance and Kamgam text auto-sizing; review whether any final package sends external telemetry.</li>
       <li>PlayFab: cloud saves, leaderboards, player statistics, inventory, entitlements and purchase validation.</li>
       <li>No chat, public names/profiles or user-generated content are intended.</li>
@@ -53,20 +57,21 @@
 
     <h3>2. Google Play Data Safety</h3>
     <p>Google requires an accurate Data safety section for each app. It must cover the app's data collection, sharing and security practices, including third-party SDKs, versions, regions and user ages.</p>
-    <p>WordWildWest will likely need disclosures for account/platform identifiers, email, PlayFab ID, custom/guest ID, display name, avatar/profile icon URL, device identifiers, advertising ID, IP address, technical data, gameplay activity, progress, scores, leaderboards, player statistics, cloud saves, inventory, virtual currency, purchases, receipts, remove-ads entitlement, ad interactions and diagnostics/performance data if enabled.</p>
+    <p>WordWildWest will likely need disclosures for account/platform identifiers, email if collected through login or support, PlayFab ID, custom/guest ID, display name, avatar/profile icon URL, device identifiers, advertising ID, IP address, technical data, gameplay activity, progress, scores, leaderboards, player statistics, cloud saves, inventory, virtual currency, purchases, receipts, remove-ads entitlement, ad interactions, local notification-related data, support messages if forms are active, and diagnostics/performance/analytics data if enabled.</p>
 
     <h3>3. Google Play account deletion</h3>
-    <p>Because the app supports account creation, it should provide an in-app way to initiate account deletion. The recommended minimum is Settings > Account > Delete Account, with confirmation, warning about loss of progress/cloud saves/leaderboards/account entitlements, and a PlayFab CloudScript/backend deletion request.</p>
+    <p>Because the app supports account creation, it should provide an in-app way to initiate account deletion and a functional web resource for users who cannot access the app. The recommended minimum is Settings > Account > Delete Account, plus the public <a href="account-deletion.html">Account Deletion Request</a> page, with confirmation, warning about loss of progress/cloud saves/leaderboards/account entitlements, and a PlayFab CloudScript/backend deletion request.</p>
 
     <h3>4. Google Play target audience and Families</h3>
     <p>Because the target audience includes children, the Play Console target audience section should include child age groups. This triggers Families Policy requirements, including use of Families Self-Certified Ads SDKs when serving ads to children or users of unknown age.</p>
-    <p>Recommended configuration: non-personalised ads for children and unknown-age users, age-appropriate ad rating, no behavioural tracking for children and confirmation that all child-facing ad SDKs are permitted.</p>
+    <p>Recommended configuration: neutral age screening or a safe-by-default child mode, non-personalised ads for children and unknown-age users, age-appropriate ad rating, no behavioural tracking for children and confirmation that all child-facing ad SDKs are permitted.</p>
 
     <h3>5. Apple App Privacy Labels</h3>
-    <p>App Store Connect requires App Privacy Details describing data types collected, whether linked to users, purposes and tracking. Prepare answers for identifiers, display name/profile, usage data, diagnostics, purchases, coarse location via IP, contact info if email is collected, advertising data and gameplay/account data.</p>
+    <p>App Store Connect requires App Privacy Details describing data types collected, whether linked to users, purposes and tracking. Prepare answers for identifiers, display name/profile, usage data, diagnostics/analytics if enabled, purchases, coarse location via IP, contact info if email is collected, support content if forms are active, advertising data and gameplay/account data.</p>
 
     <h3>6. Apple ATT and tracking</h3>
     <p>If the app collects data and shares it with other companies for cross-app/site tracking, or uses IDFA for personalised advertising, it must use App Tracking Transparency before tracking. If the app does not track on iOS, remove IDFA/NSUserTrackingUsageDescription and configure SDKs accordingly.</p>
+    <p>Apple privacy manifests should also be reviewed before submission. If the app or embedded SDKs use required reason APIs, collect data, enable data collection or contact tracking domains, the final iOS build must include the required PrivacyInfo.xcprivacy declarations.</p>
 
     <h3>7. Apple account deletion</h3>
     <p>Apps that support account creation must let users initiate account deletion within the app. Email-only deletion is not enough for store review.</p>
@@ -78,12 +83,17 @@
     <ul class="checklist">
       <li>Implement in-app account deletion.</li>
       <li>Confirm final SDKs and Unity services, especially whether any analytics/crash reporting service is enabled.</li>
+      <li>Confirm Unity Analytics setting and either disable it or include it consistently in policies, Google Play Data Safety and Apple labels.</li>
+      <li>Confirm EmailJS/support form final status and remove placeholders before release.</li>
+      <li>Confirm local notification permission flow and Android 13+ permission handling.</li>
+      <li>Avoid or replace device-derived guest identifiers where possible; if retained, disclose them as device identifiers.</li>
       <li>Confirm Unity dashboard services and package manifests match the public Partners and SDKs Notice.</li>
       <li>Confirm AppLovin remains disabled in final mediation.</li>
       <li>Gate EU/UK consent before AdMob, LevelPlay and other non-essential SDKs.</li>
       <li>Configure child handling: non-personalised ads, permitted SDKs, no child behavioural tracking.</li>
       <li>Complete Google Play Data Safety from the real build.</li>
       <li>Complete Apple App Privacy Labels from the real build.</li>
+      <li>Complete Apple privacy manifest / required reason API review for the final iOS build.</li>
       <li>Validate age rating and target audience.</li>
       <li>Ensure published policies match the app exactly.</li>
     </ul>

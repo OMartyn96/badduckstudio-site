@@ -56,7 +56,9 @@
       the same way as a website. However, mobile SDKs and platform services may
       access or store information on your device, including local storage,
       PlayerPrefs, advertising IDs, app instance identifiers, device signals and
-      consent preferences.
+      consent preferences. The Application may also store local gameplay
+      cooldowns, notification preferences and support-form state if those
+      features are enabled.
     </p>
 
     <h3>2. Technologies used in the Application</h3>
@@ -65,6 +67,7 @@
       <li><strong>Advertising identifiers:</strong> Android Advertising ID, Apple IDFA or similar identifiers where available and permitted.</li>
       <li><strong>Device identifiers:</strong> technical identifiers used for operation, security, diagnostics, analytics, fraud prevention or ad delivery.</li>
       <li><strong>Local storage:</strong> information stored on your device to remember settings, progress, preferences, save data or consent choices.</li>
+      <li><strong>Local notification technologies:</strong> local reminders and permission/status information used for gameplay reminders such as lives or rewards.</li>
       <li><strong>Analytics and performance technologies:</strong> tools that help us understand app performance, crashes, usage and technical issues.</li>
       <li><strong>Advertising technologies:</strong> tools used to deliver, limit, measure or personalise ads.</li>
       <li><strong>Security and fraud prevention technologies:</strong> tools used to detect misuse, cheating, fraud, unauthorised activity or invalid ad traffic.</li>
@@ -83,8 +86,8 @@
     <h4>3.2 Preferences</h4>
     <p>
       These remember choices such as language, region, audio settings, gameplay
-      settings, accessibility preferences and consent choices. Consent may be
-      required where they are not strictly necessary.
+      settings, accessibility preferences, notification preferences and consent
+      choices. Consent may be required where they are not strictly necessary.
     </p>
 
     <h4>3.3 Analytics and diagnostics</h4>
@@ -121,6 +124,8 @@
       <li>Apple services, App Store, Game Center and Sign in with Apple;</li>
       <li>Unity IAP and applicable app-store payment systems.</li>
       <li>Unity Adaptive Performance packages for Android device performance optimisation.</li>
+      <li>Unity Analytics or diagnostics services if enabled in the final project.</li>
+      <li>Email/support-form services if an in-app support form is enabled.</li>
     </ul>
     <p>
       More detailed provider information and policy links are available in the
@@ -149,6 +154,11 @@
       where consent is required. Consent records may be retained to demonstrate
       compliance and respect your choices.
     </p>
+    <p>
+      For children or users of unknown age, the Application should use
+      child-appropriate settings, such as non-personalised ads and reduced
+      tracking, where required by platform rules or applicable law.
+    </p>
 
     <h3>6. Device and platform controls</h3>
     <p>You may be able to manage advertising and tracking choices through your device or platform settings, including:</p>
@@ -159,6 +169,7 @@
       <li>managing privacy settings in Android or iOS;</li>
       <li>managing Google or Apple account privacy settings;</li>
       <li>using privacy controls offered by advertising partners.</li>
+      <li>managing notification permissions and notification settings.</li>
     </ul>
 
     <h3>7. Effects of rejecting or withdrawing consent</h3>

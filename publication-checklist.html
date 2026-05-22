@@ -56,7 +56,11 @@
     <ul class="checklist">
       <li>List every SDK in the final Unity project.</li>
       <li>Compare Unity packages with the Partners and SDKs Notice.</li>
-      <li>Current package review: no separate analytics/crash reporting SDK has been identified, but confirm final Unity services and dashboards.</li>
+      <li>Current audit note: Unity Analytics may be enabled in project settings; confirm whether it enters the final build and either disable it or disclose it consistently.</li>
+      <li>Crash Reporting appears off in the audit, but confirm final Unity services and dashboards.</li>
+      <li>Confirm Unity Mobile Notifications behaviour, including Android 13+ notification permission where applicable.</li>
+      <li>Confirm whether EmailJS/support forms are configured with real credentials; remove placeholders or disclose the provider.</li>
+      <li>Review guest login identifiers and avoid device-derived identifiers where possible.</li>
       <li>Confirmed: AppLovin should be disabled in the final mediation configuration.</li>
       <li>Confirm every mediation partner enabled in Unity LevelPlay / AdMob dashboards.</li>
       <li>Remove unused partner names from the published notice.</li>
@@ -89,6 +93,7 @@
     <ul class="checklist">
       <li>Google Play Data Safety must match these documents and SDK behaviour.</li>
       <li>Apple App Privacy labels must match these documents and SDK behaviour.</li>
+      <li>Apple privacy manifest / required reason API declarations must match the final iOS build and embedded SDKs.</li>
       <li>Account deletion URL and in-app deletion flow must be available if account creation is available.</li>
       <li>AdMob/Google consent configuration must match regions where ads are served.</li>
     </ul>

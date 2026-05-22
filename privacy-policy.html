@@ -56,7 +56,8 @@
       WordWildWest is an ad-supported mobile word game. It may use app-store
       services, authentication providers, PlayFab backend services, cloud saves,
       leaderboards, player statistics, in-app purchase validation, advertising
-      SDKs, diagnostics, performance technologies and similar technologies.
+      SDKs, analytics or diagnostics if enabled, local notifications, support
+      form services, performance technologies and similar technologies.
     </p>
     <p>
       This Policy should be read together with our
@@ -89,7 +90,7 @@
       <li>display name, username, profile icon or account identifiers;</li>
       <li>email address, if you provide one for support, account recovery or authentication;</li>
       <li>support requests, correspondence and privacy requests;</li>
-      <li>information submitted through forms, settings, account screens or support channels;</li>
+      <li>information submitted through forms, settings, account screens or support channels, including support forms if enabled;</li>
       <li>purchase-related information made available by Google Play, Apple App Store or other app stores.</li>
     </ul>
 
@@ -98,10 +99,11 @@
       <li>device type, model, manufacturer, operating system and version;</li>
       <li>language, country, region and approximate location inferred from IP address or device settings;</li>
       <li>IP address, app version, install source and technical identifiers;</li>
-      <li>device identifiers and advertising identifiers where permitted;</li>
+      <li>device identifiers, guest account identifiers and advertising identifiers where permitted;</li>
       <li>gameplay activity, level progress, scores, achievements, leaderboards, rewards and statistics;</li>
       <li>virtual currency, inventory, purchase entitlement and restore information;</li>
       <li>cloud save data and local save synchronisation information;</li>
+      <li>local preferences, cooldowns, notification settings and local notification scheduling information;</li>
       <li>crash logs, diagnostics, performance data and security events;</li>
       <li>advertising interactions, ad impressions, reward completion, frequency capping and ad measurement events;</li>
       <li>privacy choices, consent status and related compliance records.</li>
@@ -144,6 +146,9 @@
       weekly and monthly scores, leaderboard entries, cloud save data, player
       statistics, inventory, virtual currency, remove-ads entitlement, purchase
       validation data, ban/fair-play records and account deletion requests.
+      Guest/custom IDs should be generated and stored in a privacy-minimising
+      way. If a device-derived identifier is used for guest login, it should be
+      treated as a device identifier and disclosed in store privacy forms.
     </p>
 
     <h3>5. How we use personal data</h3>
@@ -152,7 +157,7 @@
       <li>to enable gameplay, accounts, guest login, Google login, Apple login, cloud saves, leaderboards, profiles and related features;</li>
       <li>to process, validate, restore and manage in-app purchases and entitlements;</li>
       <li>to provide customer support and respond to enquiries;</li>
-      <li>to send service messages, security alerts and administrative communications;</li>
+      <li>to send service messages, security alerts, local notifications and administrative communications;</li>
       <li>to debug, test, analyse, measure and improve the Application;</li>
       <li>to detect, prevent and investigate fraud, cheating, misuse, security incidents and invalid ad traffic;</li>
       <li>to display ads, measure ad performance, limit ad frequency and provide rewarded ads;</li>
@@ -183,6 +188,14 @@
       approximate location, diagnostics and performance data.
     </p>
     <p>
+      Unity Analytics, Unity dashboard services, crash/diagnostic tools or other
+      analytics services may be used only if enabled in the final build or
+      project configuration. If they are disabled, they should be removed from
+      the final store disclosures and SDK notice. If enabled, their data
+      collection should be reflected in Google Play Data Safety and Apple App
+      Privacy Details.
+    </p>
+    <p>
       Depending on your jurisdiction, device settings, age status, consent
       choices and partner configuration, advertising may be contextual,
       non-personalised or personalised. If you reject personalised advertising,
@@ -201,6 +214,7 @@
       <li>service providers that help operate, host, secure, analyse or improve the Application;</li>
       <li>PlayFab and backend service providers used for accounts, cloud saves, purchase validation and leaderboards;</li>
       <li>advertising, mediation and analytics partners, subject to consent choices where required;</li>
+      <li>support form or email service providers if in-app support forms are enabled;</li>
       <li>Google, Apple and app-store or platform providers;</li>
       <li>professional advisers, auditors, insurers or legal representatives;</li>
       <li>competent authorities, courts, regulators or law enforcement where required by law or necessary to protect rights, safety, security or prevent fraud;</li>
@@ -230,6 +244,7 @@
       <li>gameplay, cloud save, inventory, score and leaderboard data is retained while needed to provide the relevant features;</li>
       <li>automatically collected technical, diagnostic and usage data is generally retained for up to 24 months and may then be aggregated or anonymised;</li>
       <li>support communications are retained as needed to respond to your request and maintain records;</li>
+      <li>local notification settings and local preferences are retained on your device until changed, reset or deleted;</li>
       <li>purchase and entitlement records are retained as required for accounting, tax, fraud prevention, app-store requirements and legal compliance;</li>
       <li>consent records are retained as necessary to demonstrate compliance, respect your choices and prevent repeated prompts;</li>
       <li>security, anti-cheat and fraud records may be retained as needed to protect the Application and enforce these Terms.</li>
@@ -242,6 +257,8 @@
       your account and associated data through the Delete Account option in the
       Application settings when that feature is enabled, or by contacting us at
       <a href="mailto:contact@badduckstudio.com">contact@badduckstudio.com</a>.
+      A web request path is also available at
+      <a href="account-deletion.html">Account Deletion Request</a>.
       App-store releases that support account creation should also provide an
       in-app way to initiate account deletion where required by platform rules.
     </p>

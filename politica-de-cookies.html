@@ -34,7 +34,7 @@
 
     <h3>1. Introdução</h3>
     <p>Esta Política explica como a WordWildWest utiliza cookies, kits de desenvolvimento de software (SDKs), identificadores publicitários, identificadores de dispositivo, armazenamento local, pixels, etiquetas, sinais de SDK, strings de consentimento e tecnologias semelhantes ("Tecnologias").</p>
-    <p>A WordWildWest é uma aplicação móvel e pode não usar cookies de navegador da mesma forma que um site. Ainda assim, SDKs móveis e serviços de plataforma podem aceder ou armazenar informação no dispositivo, incluindo PlayerPrefs, identificadores publicitários, identificadores de instância da aplicação, sinais técnicos e preferências de consentimento.</p>
+    <p>A WordWildWest é uma aplicação móvel e pode não usar cookies de navegador da mesma forma que um site. Ainda assim, SDKs móveis e serviços de plataforma podem aceder ou armazenar informação no dispositivo, incluindo PlayerPrefs, identificadores publicitários, identificadores de instância da aplicação, sinais técnicos, preferências de consentimento, cooldowns de jogabilidade, preferências de notificações e estado de formulário de suporte se essas funcionalidades estiverem ativas.</p>
 
     <h3>2. Tecnologias utilizadas</h3>
     <ul>
@@ -42,6 +42,7 @@
       <li><strong>Identificadores publicitários:</strong> Android Advertising ID, Apple IDFA ou semelhantes, quando disponíveis e permitidos.</li>
       <li><strong>Identificadores técnicos:</strong> usados para operação, segurança, diagnóstico, fraude ou anúncios.</li>
       <li><strong>Armazenamento local:</strong> definições, progresso, preferências, dados guardados e escolhas de consentimento.</li>
+      <li><strong>Tecnologias de notificações locais:</strong> lembretes locais e informação de permissão/estado usada para lembretes de jogo, como vidas ou recompensas.</li>
       <li><strong>Análise e desempenho:</strong> falhas, desempenho, uso e problemas técnicos.</li>
       <li><strong>Publicidade:</strong> entrega, limitação, medição e personalização de anúncios.</li>
       <li><strong>Segurança e fraude:</strong> deteção de abuso, batota, fraude, acesso não autorizado ou tráfego inválido.</li>
@@ -51,7 +52,7 @@
     <h4>3.1 Estritamente necessárias</h4>
     <p>Necessárias para funcionamento da aplicação, funcionalidades solicitadas, segurança, definições essenciais, autenticação, compras, gravações na nuvem, prevenção de fraude e operação do serviço. Normalmente não exigem consentimento prévio, mas são descritas por transparência.</p>
     <h4>3.2 Preferências</h4>
-    <p>Recordam idioma, região, som, definições de jogo, acessibilidade e escolhas de consentimento. Podem exigir consentimento quando não forem estritamente necessárias.</p>
+    <p>Recordam idioma, região, som, definições de jogo, acessibilidade, preferências de notificações e escolhas de consentimento. Podem exigir consentimento quando não forem estritamente necessárias.</p>
     <h4>3.3 Análise e diagnóstico</h4>
     <p>Ajudam a diagnosticar falhas, melhorar desempenho, corrigir erros, testar funcionalidades e otimizar a experiência. Quando não forem estritamente necessárias, pediremos consentimento onde a lei exigir.</p>
     <h4>3.4 Publicidade e medição</h4>
@@ -60,15 +61,16 @@
     <p>Pode usar identificadores, atividade na aplicação, localização aproximada, dados de dispositivo ou interações com anúncios para apresentar anúncios mais relevantes. Onde exigido, será usada apenas com consentimento válido ou outra base legal permitida.</p>
 
     <h3>4. Fornecedores principais</h3>
-    <p>A aplicação pode usar Unity LevelPlay, Unity Ads, Google AdMob, PlayFab/Microsoft, Apple, Google Play Services, Google Play Games, Unity IAP, sistemas de pagamento das lojas e pacotes Unity Adaptive Performance para otimização de desempenho em Android. A AppLovin não se destina a estar ativa na configuração final de mediação. Mais detalhes estão no <a href="parceiros-e-sdks.html">Aviso de Parceiros e SDKs</a>.</p>
+    <p>A aplicação pode usar Unity LevelPlay, Unity Ads, Google AdMob, PlayFab/Microsoft, Apple, Google Play Services, Google Play Games, Unity IAP, sistemas de pagamento das lojas, pacotes Unity Adaptive Performance para otimização de desempenho em Android, Unity Analytics/diagnóstico se ativo no projeto final e serviços de email/formulário de suporte se um formulário in-app for ativado. A AppLovin não se destina a estar ativa na configuração final de mediação. Mais detalhes estão no <a href="parceiros-e-sdks.html">Aviso de Parceiros e SDKs</a>.</p>
 
     <h3>5. Consentimento e controlo</h3>
     <p>Quando a lei exigir, pediremos consentimento antes de Tecnologias não essenciais, incluindo publicidade personalizada, certas análises, tracking comportamental, medição publicitária e acesso/armazenamento por SDKs que não seja estritamente necessário.</p>
     <p>O utilizador pode ver opções como Aceitar tudo, Rejeitar não essenciais, Gerir escolhas, ou escolher entre anúncios personalizados e não personalizados. Pode alterar ou retirar consentimento nas definições da aplicação, interface de consentimento, definições do dispositivo ou outros mecanismos disponíveis.</p>
     <p>Na UE, EEE, Reino Unido e Suíça, SDKs não essenciais de publicidade, análise e tracking não devem iniciar antes de consentimento válido quando este for exigido.</p>
+    <p>Para crianças ou utilizadores de idade desconhecida, a aplicação deve usar definições adequadas a menores, como anúncios não personalizados e tracking reduzido, quando exigido pelas regras das plataformas ou pela lei aplicável.</p>
 
     <h3>6. Controlos do dispositivo</h3>
-    <p>O utilizador pode gerir escolhas através de definições do dispositivo: repor ou eliminar identificador publicitário, limitar personalização de anúncios, desativar App Tracking Transparency no iOS, gerir privacidade Android/iOS, contas Google/Apple e ferramentas de opt-out de parceiros.</p>
+    <p>O utilizador pode gerir escolhas através de definições do dispositivo: repor ou eliminar identificador publicitário, limitar personalização de anúncios, desativar App Tracking Transparency no iOS, gerir privacidade Android/iOS, gerir permissões/notificações, contas Google/Apple e ferramentas de opt-out de parceiros.</p>
 
     <h3>7. Efeito de rejeitar consentimento</h3>
     <p>Se rejeitar ou retirar consentimento, algumas funcionalidades podem ser limitadas ou menos personalizadas. Poderá continuar a ver anúncios contextuais ou não personalizados. Tecnologias estritamente necessárias podem permanecer ativas.</p>

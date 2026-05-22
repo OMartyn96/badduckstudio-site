@@ -65,7 +65,7 @@
           <tr>
             <td>Google AdMob / Google</td>
             <td>Ads, rewarded ads, ad measurement, fraud prevention, consent tools.</td>
-            <td>Advertising ID, device data, IP address, approximate location, ad events, consent signals.</td>
+            <td>Advertising ID, Google Mobile Ads signals, device data, IP address, approximate location, ad events, consent signals.</td>
             <td>Google UMP / CMP, device ad settings, non-personalised ads where available.</td>
           </tr>
           <tr>
@@ -105,8 +105,26 @@
             <td>Device settings and app permissions where applicable.</td>
           </tr>
           <tr>
+            <td>Unity Analytics / Unity Dashboard services, if enabled</td>
+            <td>Analytics, diagnostics, technical performance and product improvement if active in the final build.</td>
+            <td>App usage, device information, events, diagnostics and performance data depending on the enabled Unity services.</td>
+            <td>Unity project settings, consent controls where required, store privacy disclosures.</td>
+          </tr>
+          <tr>
+            <td>Unity Mobile Notifications</td>
+            <td>Local reminders related to gameplay, lives, rewards or cooldowns.</td>
+            <td>Local notification status, schedules and device permission state. No external push provider is intended unless separately configured.</td>
+            <td>Device notification settings and in-app settings where available.</td>
+          </tr>
+          <tr>
+            <td>EmailJS or support-form provider, if configured</td>
+            <td>In-app support form or contact form delivery.</td>
+            <td>Email address, support message, subject, device/app context if included in the form.</td>
+            <td>Use email instead of form where available; support/privacy request handling.</td>
+          </tr>
+          <tr>
             <td>Technical Unity/local packages</td>
-            <td>Core game operation, localisation, input, rendering, UI, visual scripting, camera tools and text auto-sizing.</td>
+            <td>Core game operation, localisation, input, rendering, UI, visual scripting, camera tools, animations and text auto-sizing.</td>
             <td>Normally no separate personal-data collection unless connected to another active service or custom logging.</td>
             <td>Final build/package review; remove or disclose any package that sends data externally.</td>
           </tr>
@@ -141,6 +159,7 @@
       <li><a href="https://privacy.microsoft.com/privacystatement" target="_blank">Microsoft Privacy Statement</a></li>
       <li><a href="https://www.playfab.com/terms/" target="_blank">PlayFab terms and privacy resources</a></li>
       <li><a href="https://www.apple.com/legal/privacy/" target="_blank">Apple Privacy Policy</a></li>
+      <li><a href="https://www.emailjs.com/legal/privacy-policy/" target="_blank">EmailJS Privacy Policy, if support forms are enabled</a></li>
     </ul>
 
     <h3>Build verification</h3>
@@ -151,9 +170,9 @@
       in the final build should be removed from this Notice, and any SDK used in
       the final build should be added here before publication. Technical packages
       such as Unity Localization, Input System, URP, Cinemachine, UGUI, Vector
-      Graphics, Visual Scripting and Kamgam text auto-sizing should still be
-      reviewed, but are not treated as independent data partners unless they send
-      data externally or are connected to another online service.
+      Graphics, Visual Scripting, DOTween and Kamgam text auto-sizing should
+      still be reviewed, but are not treated as independent data partners unless
+      they send data externally or are connected to another online service.
     </p>
     <nav class="document-nav" aria-label="Document actions"><a href="index.html">Back to index</a><a href="#top">Back to top</a><a href="parceiros-e-sdks.html">Ver em português</a></nav>
   </article>
