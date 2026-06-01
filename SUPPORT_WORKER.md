@@ -39,7 +39,7 @@ The domain must be proxied through Cloudflare for those routes to run.
 Non-secret values are in `wrangler.toml`:
 
 ```toml
-SUPPORT_TO_EMAIL = "contact@badduckstudio.com"
+SUPPORT_TO_EMAIL = "support@badduckstudio.com"
 SUPPORT_FROM_EMAIL = "WordWildWest Support <support@badduckstudio.com>"
 ALLOWED_ORIGINS = "https://badduckstudio.com,https://www.badduckstudio.com"
 ```

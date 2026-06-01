@@ -46,7 +46,7 @@
       <li>Unity Analytics: project settings indicate analytics may be enabled; confirm whether Unity Analytics or any Unity dashboard telemetry enters the final build.</li>
       <li>Crash reporting: appears off in the audit, but confirm final Unity services.</li>
       <li>Notifications: local Android notifications for lives/cooldowns appear in the project.</li>
-      <li>Support form: the public support page posts to a Cloudflare Worker, which sends support email through Resend. EmailJS should be disclosed only if real credentials/final configuration make it active later.</li>
+      <li>Support form: the public support page posts to a Cloudflare Worker, which sends support email through Resend.</li>
       <li>Guest identifier: guest login may use a generated ID or device-derived identifier; device-derived identifiers should be minimised and disclosed as device identifiers.</li>
       <li>Technical/local packages identified: Unity Purchasing, Localization, Input System, URP, Cinemachine, Visual Scripting, UGUI, Vector Graphics, Adaptive Performance and Kamgam text auto-sizing; review whether any final package sends external telemetry.</li>
       <li>PlayFab: cloud saves, leaderboards, player statistics, inventory, entitlements and purchase validation.</li>
@@ -85,7 +85,7 @@
       <li>Implement in-app account deletion.</li>
       <li>Confirm final SDKs and Unity services, especially whether any analytics/crash reporting service is enabled.</li>
       <li>Confirm Unity Analytics setting and either disable it or include it consistently in policies, Google Play Data Safety and Apple labels.</li>
-      <li>Confirm the support form final status, Cloudflare route, Resend sender domain and store/privacy disclosures before release. If EmailJS or another form backend is later enabled, remove placeholders and update this site, store disclosures and SDK notices.</li>
+      <li>Confirm the support form final status, Cloudflare Worker endpoint, Resend sender domain and store/privacy disclosures before release. If another form backend is later enabled, update this site, store disclosures and SDK notices.</li>
       <li>Confirm local notification permission flow and Android 13+ permission handling.</li>
       <li>Avoid or replace device-derived guest identifiers where possible; if retained, disclose them as device identifiers.</li>
       <li>Confirm Unity dashboard services and package manifests match the public Partners and SDKs Notice.</li>
