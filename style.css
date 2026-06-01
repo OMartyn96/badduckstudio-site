@@ -342,6 +342,46 @@ th {
   font-size: 14px;
 }
 
+.support-form {
+  display: grid;
+  gap: 10px;
+  margin: 24px 0;
+}
+
+.support-form label {
+  font-weight: 700;
+  color: var(--accent-dark);
+}
+
+.support-form input,
+.support-form select,
+.support-form textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px;
+  font: inherit;
+  color: var(--text);
+  background: #ffffff;
+}
+
+.support-form textarea {
+  resize: vertical;
+}
+
+.support-form input:focus,
+.support-form select:focus,
+.support-form textarea:focus {
+  outline: 3px solid rgba(236, 105, 7, 0.22);
+  border-color: var(--accent);
+}
+
+.support-form .button {
+  border: none;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
 @media print {
   body {
     background: #ffffff;

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Pedido de Suporte | WordWildWest</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://badduckstudio.com/suporte.html">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+<body id="top">
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo-link" href="/" aria-label="Voltar à página inicial">
+      <img src="assets/logo.png" alt="Logótipo da Bad Duck Studio" class="site-logo">
+    </a>
+    <div class="brand-text">
+      <h1>Bad Duck Studio</h1>
+      <p>Suporte oficial da WordWildWest</p>
+    </div>
+    <nav class="site-nav" aria-label="Navegação principal">
+      <a href="/">Início</a>
+      <a href="/#english">English</a>
+      <a href="/#portugues">Português</a>
+      <a href="conformidade-lojas.html">Checklist lojas</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <article class="card legal-document">
+    <nav class="breadcrumb" aria-label="Percurso"><a href="/">Index</a><span aria-hidden="true">-&gt;</span><span>Pedido de Suporte</span></nav>
+    <h2>Pedido de Suporte</h2>
+
+    <p class="meta">
+      Aplicação: WordWildWest<br>
+      Prestador: BAD DUCK STUDIO, LDA<br>
+      Contacto: <a href="mailto:contact@badduckstudio.com">contact@badduckstudio.com</a>
+    </p>
+
+    <p>
+      Use este formulário para nos contactar sobre eliminação de conta, suporte
+      do jogo, bugs, compras, privacidade ou outros assuntos da WordWildWest. O
+      formulário abre a sua aplicação de email com a informação preenchida; não
+      envia o pedido para este site nem para um fornecedor externo de formulários.
+    </p>
+
+    <div class="notice">
+      Não envie passwords, dados completos de cartões de pagamento ou informação
+      sensível desnecessária. Para eliminação de conta, inclua informação
+      suficiente para identificarmos e verificarmos a conta.
+    </div>
+
+    <form class="support-form" id="support-form">
+      <label for="topic">Tema</label>
+      <select id="topic" name="topic" required>
+        <option value="Eliminação de conta">Eliminação de conta</option>
+        <option value="Suporte do jogo">Suporte do jogo</option>
+        <option value="Bug">Bug</option>
+        <option value="Pagamentos e compras">Pagamentos e compras</option>
+        <option value="Pedido de privacidade ou dados">Pedido de privacidade ou dados</option>
+        <option value="Outro">Outro</option>
+      </select>
+
+      <label for="email">O seu email</label>
+      <input id="email" name="email" type="email" autocomplete="email" required>
+
+      <label for="name">Nome ou nome de jogador</label>
+      <input id="name" name="name" type="text" autocomplete="name">
+
+      <label for="platform">Plataforma</label>
+      <select id="platform" name="platform">
+        <option value="">Selecionar se relevante</option>
+        <option value="Android / Google Play">Android / Google Play</option>
+        <option value="iOS / App Store">iOS / App Store</option>
+        <option value="Outra">Outra</option>
+      </select>
+
+      <label for="identifier">Identificador da conta, se disponível</label>
+      <input id="identifier" name="identifier" type="text" placeholder="PlayFab ID, nome apresentado, Google Play Games ID, email relay Apple...">
+
+      <label for="version">Versão da app, dispositivo e país/região</label>
+      <input id="version" name="version" type="text" placeholder="Exemplo: v1.0, Pixel 8, Portugal">
+
+      <label for="subject">Assunto</label>
+      <input id="subject" name="subject" type="text" required>
+
+      <label for="message">Mensagem</label>
+      <textarea id="message" name="message" rows="9" required></textarea>
+
+      <button class="button" type="submit">Abrir pedido por email</button>
+    </form>
+
+    <p class="meta">
+      Se o botão não abrir a aplicação de email, contacte-nos diretamente em
+      <a href="mailto:contact@badduckstudio.com">contact@badduckstudio.com</a>.
+      Para instruções específicas de eliminação, consulte
+      <a href="eliminacao-de-conta.html">Pedido de Eliminação de Conta</a>.
+    </p>
+
+    <nav class="document-nav" aria-label="Document actions"><a href="/">Voltar ao index</a><a href="#top">Voltar ao topo</a><a href="support.html">View in English</a></nav>
+  </article>
+</main>
+
+<footer>
+  <div class="footer-inner">© 2026 BAD DUCK STUDIO, LDA. Todos os direitos reservados.</div>
+</footer>
+
+<script>
+  document.getElementById('support-form').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const data = new FormData(event.currentTarget);
+    const topic = data.get('topic') || 'Suporte';
+    const subject = `[WordWildWest] [${topic}] ${data.get('subject') || ''}`;
+    const body = [
+      `Tema: ${topic}`,
+      `Email de resposta: ${data.get('email') || ''}`,
+      `Nome/nome de jogador: ${data.get('name') || ''}`,
+      `Plataforma: ${data.get('platform') || ''}`,
+      `Identificador da conta: ${data.get('identifier') || ''}`,
+      `Versão da app, dispositivo e país/região: ${data.get('version') || ''}`,
+      '',
+      'Mensagem:',
+      data.get('message') || ''
+    ].join('\n');
+
+    window.location.href = `mailto:contact@badduckstudio.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  });
+</script>
+
+</body>
+</html>
