@@ -48,7 +48,7 @@
           <tr><td>Unity Adaptive Performance para Android</td><td>Otimização de desempenho em dispositivos Android/Samsung suportados.</td><td>Sinais técnicos de desempenho e capacidade do dispositivo usados localmente ou tecnicamente para otimizar desempenho.</td><td>Definições do dispositivo e permissões da app quando aplicável.</td></tr>
           <tr><td>Unity Analytics / serviços Unity Dashboard, se ativos</td><td>Analytics, diagnóstico, desempenho técnico e melhoria do produto se ativos no build final.</td><td>Uso da app, informação de dispositivo, eventos, diagnóstico e desempenho conforme serviços Unity ligados.</td><td>Definições do projeto Unity, consentimento quando exigido, declarações de privacidade nas lojas.</td></tr>
           <tr><td>Unity Mobile Notifications</td><td>Lembretes locais relacionados com jogabilidade, vidas, recompensas ou cooldowns.</td><td>Estado de notificações locais, agendamentos e permissão do dispositivo. Não se pretende usar push externo salvo configuração separada.</td><td>Definições de notificações do dispositivo e definições da app quando disponíveis.</td></tr>
-          <tr><td>Página pública de suporte e fornecedor de email</td><td>Suporte, eliminação de conta, bugs, compras e pedidos de privacidade enviados por email.</td><td>Email, mensagem de suporte, assunto, identificador de conta opcional, plataforma, versão da app, dispositivo e país/região se o utilizador os incluir.</td><td>O formulário do site abre a aplicação de email do utilizador e não submete dados para um backend de formulário do site. A EmailJS não é tratada como ativa salvo se for configurada posteriormente com credenciais reais e declarada antes do lançamento.</td></tr>
+          <tr><td>Cloudflare Workers e Resend</td><td>Tratamento do formulário de suporte do site e entrega de emails para suporte, eliminação de conta, bugs, compras e pedidos de privacidade.</td><td>Email, mensagem de suporte, assunto, identificador de conta opcional, plataforma, versão da app, dispositivo, país/região e metadados técnicos do pedido processados pela Cloudflare.</td><td>Validação do formulário de suporte, campos obrigatórios limitados, fallback por email e revisão da configuração dos fornecedores. A EmailJS não é tratada como ativa salvo se for configurada posteriormente com credenciais reais e declarada antes do lançamento.</td></tr>
           <tr><td>Pacotes técnicos Unity/locais</td><td>Funcionamento do jogo, localização, input, rendering, UI, visual scripting, câmara, animações e auto-size de texto.</td><td>Normalmente sem recolha separada de dados pessoais, salvo se ligados a outro serviço ativo ou logging próprio.</td><td>Revisão do build/package final; remover ou declarar qualquer pacote que envie dados externamente.</td></tr>
         </tbody>
       </table>
@@ -68,6 +68,8 @@
       <li><a href="https://privacy.microsoft.com/privacystatement" target="_blank">Declaração de Privacidade Microsoft</a></li>
       <li><a href="https://www.playfab.com/terms/" target="_blank">Termos e recursos PlayFab</a></li>
       <li><a href="https://www.apple.com/legal/privacy/" target="_blank">Política de Privacidade da Apple</a></li>
+      <li><a href="https://www.cloudflare.com/privacypolicy/" target="_blank">Política de Privacidade da Cloudflare</a></li>
+      <li><a href="https://resend.com/legal/privacy-policy" target="_blank">Política de Privacidade da Resend</a></li>
     </ul>
 
     <h3>Verificação antes do lançamento</h3>

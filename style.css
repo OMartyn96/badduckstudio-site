@@ -382,6 +382,33 @@ th {
   margin-top: 8px;
 }
 
+.support-form .button:disabled {
+  cursor: wait;
+  opacity: 0.68;
+}
+
+.support-honey {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.support-status {
+  margin: 8px 0 0;
+  min-height: 24px;
+  font-weight: 700;
+}
+
+.support-status--success {
+  color: #256018;
+}
+
+.support-status--error {
+  color: #9a1c12;
+}
+
 @media print {
   body {
     background: #ffffff;

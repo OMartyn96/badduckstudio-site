@@ -57,7 +57,7 @@
     <p>O utilizador pode gerir privacidade através de App Tracking Transparency no iOS, ID publicitário Android, definições Google/Apple, permissões, notificações e ferramentas das lojas.</p>
 
     <h3>8. Formulários de suporte e notificações</h3>
-    <p>O utilizador pode contactar-nos através da página <a href="suporte.html">Pedido de Suporte</a>. Essa página abre a aplicação de email do utilizador com os detalhes preenchidos e não submete o pedido para um backend de formulário do site. Se for ativado formulário de suporte dentro da app ou fornecedor externo de formulário, o utilizador deve saber que informação é enviada e que fornecedor a recebe. As notificações locais devem ser controláveis pelas definições do dispositivo e, quando prático, por definições dentro da app.</p>
+    <p>O utilizador pode contactar-nos através da página <a href="suporte.html">Pedido de Suporte</a>. O formulário envia o pedido para um Cloudflare Worker, que usa a Resend para entregar o email à Bad Duck Studio. Se for ativado formulário de suporte dentro da app ou outro fornecedor externo de formulário, o utilizador deve saber que informação é enviada e que fornecedor a recebe. As notificações locais devem ser controláveis pelas definições do dispositivo e, quando prático, por definições dentro da app.</p>
 
     <h3>9. Registos de consentimento</h3>
     <p>Quando recolhido, o consentimento deve gerar registo de versão, data/hora, região, interface apresentada e escolhas. Estes registos ajudam a demonstrar conformidade, evitar pedidos repetidos e respeitar escolhas.</p>

@@ -42,8 +42,8 @@
     <p>
       Use este formulário para nos contactar sobre eliminação de conta, suporte
       do jogo, bugs, compras, privacidade ou outros assuntos da WordWildWest. O
-      formulário abre a sua aplicação de email com a informação preenchida; não
-      envia o pedido para este site nem para um fornecedor externo de formulários.
+      pedido é enviado para a Bad Duck Studio através do nosso endpoint seguro
+      de suporte.
     </p>
 
     <div class="notice">
@@ -89,11 +89,15 @@
       <label for="message">Mensagem</label>
       <textarea id="message" name="message" rows="9" required></textarea>
 
-      <button class="button" type="submit">Abrir pedido por email</button>
+      <label class="support-honey" for="website">Deixe este campo vazio</label>
+      <input class="support-honey" id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+
+      <button class="button" type="submit">Enviar pedido de suporte</button>
+      <p class="support-status" id="support-status" role="status" aria-live="polite"></p>
     </form>
 
     <p class="meta">
-      Se o botão não abrir a aplicação de email, contacte-nos diretamente em
+      Se o formulário não funcionar, contacte-nos diretamente em
       <a href="mailto:contact@badduckstudio.com">contact@badduckstudio.com</a>.
       Para instruções específicas de eliminação, consulte
       <a href="eliminacao-de-conta.html">Pedido de Eliminação de Conta</a>.
@@ -108,25 +112,41 @@
 </footer>
 
 <script>
-  document.getElementById('support-form').addEventListener('submit', function (event) {
+  const supportForm = document.getElementById('support-form');
+  const supportStatus = document.getElementById('support-status');
+  const supportButton = supportForm.querySelector('button[type="submit"]');
+
+  supportForm.addEventListener('submit', async function (event) {
     event.preventDefault();
 
     const data = new FormData(event.currentTarget);
-    const topic = data.get('topic') || 'Suporte';
-    const subject = `[WordWildWest] [${topic}] ${data.get('subject') || ''}`;
-    const body = [
-      `Tema: ${topic}`,
-      `Email de resposta: ${data.get('email') || ''}`,
-      `Nome/nome de jogador: ${data.get('name') || ''}`,
-      `Plataforma: ${data.get('platform') || ''}`,
-      `Identificador da conta: ${data.get('identifier') || ''}`,
-      `Versão da app, dispositivo e país/região: ${data.get('version') || ''}`,
-      '',
-      'Mensagem:',
-      data.get('message') || ''
-    ].join('\n');
+    const payload = Object.fromEntries(data.entries());
+    payload.language = 'pt';
 
-    window.location.href = `mailto:contact@badduckstudio.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    supportStatus.textContent = 'A enviar...';
+    supportStatus.className = 'support-status';
+    supportButton.disabled = true;
+
+    try {
+      const response = await fetch('/api/support', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      if (!response.ok) {
+        throw new Error('Support request failed');
+      }
+
+      supportStatus.textContent = 'O pedido de suporte foi enviado. Obrigado.';
+      supportStatus.className = 'support-status support-status--success';
+      supportForm.reset();
+    } catch (error) {
+      supportStatus.innerHTML = 'Não foi possível enviar o pedido. Contacte-nos diretamente em <a href="mailto:contact@badduckstudio.com">contact@badduckstudio.com</a>.';
+      supportStatus.className = 'support-status support-status--error';
+    } finally {
+      supportButton.disabled = false;
+    }
   });
 </script>
 

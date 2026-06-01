@@ -1,0 +1,9 @@
+name = "badduckstudio-support"
+main = "worker/support-worker.js"
+compatibility_date = "2026-06-01"
+workers_dev = true
+
+[vars]
+SUPPORT_TO_EMAIL = "contact@badduckstudio.com"
+SUPPORT_FROM_EMAIL = "WordWildWest Support <support@badduckstudio.com>"
+ALLOWED_ORIGINS = "https://badduckstudio.com,https://www.badduckstudio.com"

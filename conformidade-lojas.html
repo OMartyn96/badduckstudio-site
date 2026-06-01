@@ -46,7 +46,7 @@
       <li>Unity Analytics: as definições do projeto indicam que analytics pode estar ativo; confirmar se Unity Analytics ou telemetria do Unity Dashboard entram no build final.</li>
       <li>Crash reporting: parece desligado na auditoria, mas confirmar serviços Unity finais.</li>
       <li>Notificações: há notificações locais Android para vidas/cooldowns no projeto.</li>
-      <li>Formulário de suporte: a página pública de suporte abre atualmente a aplicação de email do utilizador e não submete dados para um backend de formulário. A EmailJS só deve ser declarada se credenciais/configuração final a tornarem ativa.</li>
+      <li>Formulário de suporte: a página pública de suporte envia para um Cloudflare Worker, que envia o email através da Resend. A EmailJS só deve ser declarada se credenciais/configuração final a tornarem ativa mais tarde.</li>
       <li>Identificador guest: login convidado pode usar ID gerado ou identificador derivado do dispositivo; identificadores derivados do dispositivo devem ser minimizados e declarados como identificadores de dispositivo.</li>
       <li>Pacotes técnicos/locais identificados: Unity Purchasing, Localization, Input System, URP, Cinemachine, Visual Scripting, UGUI, Vector Graphics, Adaptive Performance e Kamgam text auto-sizing; rever se algum pacote final envia telemetria externa.</li>
       <li>PlayFab: cloud saves, leaderboards, estatísticas, inventário, entitlements e validação de compras.</li>
@@ -100,7 +100,7 @@
       <li>Implementar botão de apagar conta dentro da app.</li>
       <li>Confirmar SDKs e serviços Unity reais no build final, sobretudo se existe analytics/crash reporting ativo.</li>
       <li>Confirmar a definição Unity Analytics e desligar ou declarar consistentemente em políticas, Google Play Data Safety e Apple labels.</li>
-      <li>Confirmar estado final do formulário de suporte. Se EmailJS ou outro backend de formulário for ativado posteriormente, remover placeholders e atualizar este site, declarações das lojas e avisos de SDK antes do lançamento.</li>
+      <li>Confirmar estado final do formulário de suporte, rota Cloudflare, domínio remetente da Resend e declarações de loja/privacidade antes do lançamento. Se EmailJS ou outro backend de formulário for ativado posteriormente, remover placeholders e atualizar este site, declarações das lojas e avisos de SDK.</li>
       <li>Confirmar fluxo de permissão de notificações locais e permissão Android 13+.</li>
       <li>Evitar ou substituir identificadores guest derivados do dispositivo quando possível; se mantidos, declarar como identificadores de dispositivo.</li>
       <li>Confirmar que serviços do Unity Dashboard e manifests de packages coincidem com o Aviso de Parceiros e SDKs publicado.</li>
