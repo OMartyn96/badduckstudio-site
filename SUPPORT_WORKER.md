@@ -3,10 +3,10 @@
 The support pages (`support.html` and `suporte.html`) submit requests to:
 
 ```text
-/api/support
+https://badduckstudio-support.badduckstudio.workers.dev/api/support
 ```
 
-That route should be handled by the Cloudflare Worker in `worker/support-worker.js`.
+That endpoint is handled by the Cloudflare Worker in `worker/support-worker.js`.
 The Worker sends the message through Resend.
 
 ## Cloudflare setup
@@ -25,12 +25,14 @@ npx wrangler deploy
 npx wrangler secret put RESEND_API_KEY
 ```
 
-5. Configure a Worker route for the production site:
+5. Optional: configure a Worker route for the production site if you want to use `/api/support` instead of the `workers.dev` URL:
 
 ```text
 badduckstudio.com/api/support
 www.badduckstudio.com/api/support
 ```
+
+The domain must be proxied through Cloudflare for those routes to run.
 
 ## Configuration
 

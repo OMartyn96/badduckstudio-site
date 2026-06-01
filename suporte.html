@@ -115,6 +115,7 @@
   const supportForm = document.getElementById('support-form');
   const supportStatus = document.getElementById('support-status');
   const supportButton = supportForm.querySelector('button[type="submit"]');
+  const supportEndpoint = 'https://badduckstudio-support.badduckstudio.workers.dev/api/support';
 
   supportForm.addEventListener('submit', async function (event) {
     event.preventDefault();
@@ -128,7 +129,7 @@
     supportButton.disabled = true;
 
     try {
-      const response = await fetch('/api/support', {
+      const response = await fetch(supportEndpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
