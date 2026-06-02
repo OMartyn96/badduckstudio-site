@@ -1,85 +1,19 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
-  <title>Aviso de Parceiros e SDKs | WordWildWest</title>
+  <title>parceiros-e-sdks | Bad Duck Studio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="canonical" href="https://badduckstudio.com/parceiros-e-sdks.html">
+  <meta http-equiv="refresh" content="0; url=word-wild-west/parceiros-e-sdks/">
+  <link rel="canonical" href="word-wild-west/parceiros-e-sdks/">
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="assets/logo.png">
 </head>
-<body id="top">
-
-<header class="site-header">
-  <div class="header-inner">
-    <a class="logo-link" href="/" aria-label="Voltar à página inicial">
-      <img src="assets/logo.png" alt="Logótipo da Bad Duck Studio" class="site-logo">
-    </a>
-    <div class="brand-text">
-      <h1>Bad Duck Studio</h1>
-      <p>Documentos legais oficiais da WordWildWest</p>
-    </div>
-    <nav class="site-nav" aria-label="Navegação principal">
-      <a href="/">Início</a>
-      <a href="/#english">English</a>
-      <a href="/#portugues">Português</a>
-      <a href="conformidade-lojas.html">Checklist lojas</a>
-    </nav>
-  </div>
-</header>
+<body>
 <main>
-  <article class="card legal-document">
-    <nav class="breadcrumb" aria-label="Percurso"><a href="/">Index</a><span aria-hidden="true">-&gt;</span><span>Aviso de Parceiros e SDKs</span></nav>
-    <h2>Aviso de Parceiros e SDKs</h2>
-    <p class="meta">Data de entrada em vigor: 22 de maio de 2026<br>Aplicação: WordWildWest<br>Prestador: BAD DUCK STUDIO, LDA<br>Contacto: <a href="mailto:contact@badduckstudio.com">contact@badduckstudio.com</a></p>
-    <div class="button-row"><a class="button" href="docs/WordWildWest_Aviso_de_Parceiros_e_SDKs_PT.pdf" target="_blank">Abrir PDF</a><a class="button secondary" href="docs/WordWildWest_Aviso_de_Parceiros_e_SDKs_PT.pdf" download>Transferir PDF</a></div>
-    <p>Este Aviso explica os principais serviços e SDKs de terceiros que podem ser usados na WordWildWest. O build final, a mediação de anúncios, as definições de plataforma, a região, o dispositivo e as escolhas de consentimento determinam quais os parceiros ativos para cada utilizador.</p>
-
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Fornecedor</th><th>Finalidade</th><th>Dados possíveis</th><th>Controlos</th></tr></thead>
-        <tbody>
-          <tr><td>Google AdMob / Google</td><td>Anúncios, anúncios recompensados, medição, prevenção de fraude, ferramentas de consentimento.</td><td>ID publicitário, sinais Google Mobile Ads, dados do dispositivo, IP, localização aproximada, eventos de anúncios, sinais de consentimento.</td><td>Google UMP/CMP, definições de anúncios do dispositivo, anúncios não personalizados quando disponíveis.</td></tr>
-          <tr><td>Unity LevelPlay / Unity Ads</td><td>Mediação, entrega de anúncios, recompensados/intersticiais, medição.</td><td>ID publicitário, dispositivo, IP, eventos de anúncios, dados de interação, consent flags.</td><td>Flags de consentimento/privacidade no SDK e definições do dispositivo.</td></tr>
-          <tr><td>PlayFab / Microsoft</td><td>Login convidado, autenticação, nuvem, dados de jogador, rankings, estatísticas, validação de compras, inventário, direito remove ads e eliminação de conta.</td><td>PlayFab ID, custom/guest ID, método de autenticação, nome apresentado, avatar/URL de ícone, progresso, pontuações semanais/mensais, entradas de leaderboards, inventário, moeda virtual, dados de compra.</td><td>Definições de conta, fluxo de eliminação via PlayFab CloudScript, pedidos de suporte/privacidade.</td></tr>
-          <tr><td>Google Play Services / Google Play Games</td><td>Login, conquistas, rankings, compras, integridade e serviços de plataforma.</td><td>ID de plataforma, perfil de jogo, conquistas, compras, sinais de dispositivo.</td><td>Definições da conta Google, Google Play e permissões.</td></tr>
-          <tr><td>Apple App Store / Game Center / Sign in with Apple</td><td>Login, distribuição, compras, Game Center e controlos de privacidade.</td><td>ID Apple/plataforma, perfil Game Center, dados de compra, sinais de dispositivo.</td><td>Definições iOS, App Tracking Transparency, conta Apple.</td></tr>
-          <tr><td>Unity IAP e lojas</td><td>Compras únicas na aplicação, compra remove ads, validação de direitos, restauro e reembolsos.</td><td>Token de compra, produto, estado da transação, recibo, direitos e estado remove_ads_permanent.</td><td>Histórico da loja, processo de reembolso, restaurar compras.</td></tr>
-          <tr><td>Unity Adaptive Performance para Android</td><td>Otimização de desempenho em dispositivos Android/Samsung suportados.</td><td>Sinais técnicos de desempenho e capacidade do dispositivo usados localmente ou tecnicamente para otimizar desempenho.</td><td>Definições do dispositivo e permissões da app quando aplicável.</td></tr>
-          <tr><td>Unity Analytics / serviços Unity Dashboard, se ativos</td><td>Analytics, diagnóstico, desempenho técnico e melhoria do produto se ativos no build final.</td><td>Uso da app, informação de dispositivo, eventos, diagnóstico e desempenho conforme serviços Unity ligados.</td><td>Definições do projeto Unity, consentimento quando exigido, declarações de privacidade nas lojas.</td></tr>
-          <tr><td>Unity Mobile Notifications</td><td>Lembretes locais relacionados com jogabilidade, vidas, recompensas ou cooldowns.</td><td>Estado de notificações locais, agendamentos e permissão do dispositivo. Não se pretende usar push externo salvo configuração separada.</td><td>Definições de notificações do dispositivo e definições da app quando disponíveis.</td></tr>
-          <tr><td>Cloudflare Workers e Resend</td><td>Tratamento do formulário de suporte do site e entrega de emails para suporte, eliminação de conta, bugs, compras e pedidos de privacidade.</td><td>Email, mensagem de suporte, assunto, identificador de conta opcional, plataforma, versão da app, dispositivo, país/região e metadados técnicos do pedido processados pela Cloudflare.</td><td>Validação do formulário de suporte, campos obrigatórios limitados, fallback por email e revisão da configuração dos fornecedores.</td></tr>
-          <tr><td>Pacotes técnicos Unity/locais</td><td>Funcionamento do jogo, localização, input, rendering, UI, visual scripting, câmara, animações e auto-size de texto.</td><td>Normalmente sem recolha separada de dados pessoais, salvo se ligados a outro serviço ativo ou logging próprio.</td><td>Revisão do build/package final; remover ou declarar qualquer pacote que envie dados externamente.</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <h3>Responsabilidades</h3>
-    <p>Somos responsáveis por escolher SDKs com cuidado, configurá-los conforme a lei e políticas de plataforma, descrevê-los nos documentos legais, transmitir sinais de consentimento/opt-out quando exigido e disponibilizar controlos. Os fornecedores continuam responsáveis pelos próprios serviços e tratamentos na medida exigida por lei.</p>
-
-    <h3>Sinais de consentimento</h3>
-    <p>Quando o consentimento for exigido, a aplicação deve recolhê-lo antes de SDKs não essenciais iniciarem e transmitir os sinais aos parceiros. Se o utilizador retirar consentimento, a aplicação deve atualizar SDKs e evitar tratamento não essencial, salvo quando permitido por lei.</p>
-
-    <h3>Links de políticas dos parceiros</h3>
-    <ul>
-      <li><a href="https://policies.google.com/privacy" target="_blank">Política de Privacidade da Google</a></li>
-      <li><a href="https://support.google.com/admob/answer/6128543" target="_blank">Informação de privacidade Google AdMob</a></li>
-      <li><a href="https://unity.com/legal/privacy-policy" target="_blank">Política de Privacidade da Unity</a></li>
-      <li><a href="https://privacy.microsoft.com/privacystatement" target="_blank">Declaração de Privacidade Microsoft</a></li>
-      <li><a href="https://www.playfab.com/terms/" target="_blank">Termos e recursos PlayFab</a></li>
-      <li><a href="https://www.apple.com/legal/privacy/" target="_blank">Política de Privacidade da Apple</a></li>
-      <li><a href="https://www.cloudflare.com/privacypolicy/" target="_blank">Política de Privacidade da Cloudflare</a></li>
-      <li><a href="https://resend.com/legal/privacy-policy" target="_blank">Política de Privacidade da Resend</a></li>
-    </ul>
-
-    <h3>Verificação antes do lançamento</h3>
-    <p>Antes de lançar, a lista de SDKs deve ser comparada com o projeto Unity final, dashboard de mediação, configuração AdMob, declarações Google Play Data Safety, Apple Privacy Labels e PlayFab. Remova parceiros não usados e adicione qualquer parceiro ativo. Pacotes técnicos como Unity Localization, Input System, URP, Cinemachine, UGUI, Vector Graphics, Visual Scripting, DOTween e Kamgam text auto-sizing devem ser revistos, mas não são tratados como parceiros independentes de dados salvo se enviarem dados externamente ou estiverem ligados a outro serviço online.</p>
-    <nav class="document-nav" aria-label="Document actions"><a href="/">Voltar ao index</a><a href="#top">Voltar ao topo</a><a href="partners-and-sdks.html">View in English</a></nav>
-  </article>
+  <section class="card pdf-fallback">
+    <h2>Documento movido</h2>
+    <p>Este conteudo passou para <a href="word-wild-west/parceiros-e-sdks/">word-wild-west/parceiros-e-sdks/</a>.</p>
+  </section>
 </main>
-<footer><div class="footer-inner">© 2026 BAD DUCK STUDIO, LDA. Todos os direitos reservados.</div></footer>
 </body>
 </html>
-
-
-
