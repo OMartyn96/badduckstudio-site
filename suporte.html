@@ -2,7 +2,7 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
-  <title>Pedido de Suporte | WordWildWest</title>
+  <title>Pedido de Suporte | Bad Duck Studio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="canonical" href="https://badduckstudio.com/suporte.html">
   <link rel="stylesheet" href="style.css">
@@ -17,13 +17,13 @@
     </a>
     <div class="brand-text">
       <h1>Bad Duck Studio</h1>
-      <p>Suporte oficial da WordWildWest</p>
+      <p>Suporte oficial dos nossos jogos</p>
     </div>
     <nav class="site-nav" aria-label="Navegação principal">
       <a href="/">Início</a>
-      <a href="/#english">English</a>
-      <a href="/#portugues">Português</a>
-      <a href="conformidade-lojas.html">Checklist lojas</a>
+      <a href="/#jogos">Jogos</a>
+      <a href="/word-wild-west/">Word Wild West</a>
+      <a href="mailto:contact@badduckstudio.com">Contacto</a>
     </nav>
   </div>
 </header>
@@ -34,16 +34,15 @@
     <h2>Pedido de Suporte</h2>
 
     <p class="meta">
-      Aplicação: WordWildWest<br>
       Prestador: BAD DUCK STUDIO, LDA<br>
       Contacto: <a href="mailto:support@badduckstudio.com">support@badduckstudio.com</a>
     </p>
 
     <p>
       Use este formulário para nos contactar sobre eliminação de conta, suporte
-      do jogo, bugs, compras, privacidade ou outros assuntos da WordWildWest. O
-      pedido é enviado para a Bad Duck Studio através do nosso endpoint seguro
-      de suporte.
+      do jogo, bugs, compras, privacidade ou outros assuntos. Selecione o jogo
+      a que o pedido se refere para o conseguirmos encaminhar corretamente à
+      medida que o estúdio cresce.
     </p>
 
     <div class="notice">
@@ -53,6 +52,12 @@
     </div>
 
     <form class="support-form" id="support-form">
+      <label for="game">Jogo</label>
+      <select id="game" name="game" required>
+        <option value="Word Wild West" data-game-slug="word-wild-west">Word Wild West</option>
+        <option value="Geral / estúdio" data-game-slug="general">Geral / estúdio</option>
+      </select>
+
       <label for="topic">Tema</label>
       <select id="topic" name="topic" required>
         <option value="Eliminação de conta">Eliminação de conta</option>
@@ -99,11 +104,11 @@
     <p class="meta">
       Se o formulário não funcionar, contacte-nos diretamente em
       <a href="mailto:support@badduckstudio.com">support@badduckstudio.com</a>.
-      Para instruções específicas de eliminação, consulte
-      <a href="eliminacao-de-conta.html">Pedido de Eliminação de Conta</a>.
+      Para instruções específicas de eliminação de Word Wild West, consulte
+      <a href="word-wild-west/eliminacao-de-conta/">Pedido de Eliminação de Conta</a>.
     </p>
 
-    <nav class="document-nav" aria-label="Document actions"><a href="/">Voltar ao index</a><a href="#top">Voltar ao topo</a><a href="support.html">View in English</a></nav>
+    <nav class="document-nav" aria-label="Document actions"><a href="/">Voltar ao index</a><a href="#top">Voltar ao topo</a><a href="support.html?game=word-wild-west">View in English</a></nav>
   </article>
 </main>
 
@@ -115,7 +120,16 @@
   const supportForm = document.getElementById('support-form');
   const supportStatus = document.getElementById('support-status');
   const supportButton = supportForm.querySelector('button[type="submit"]');
+  const gameSelect = document.getElementById('game');
   const supportEndpoint = 'https://badduckstudio-support.badduckstudio.workers.dev/api/support';
+
+  const requestedGame = new URLSearchParams(window.location.search).get('game');
+  if (requestedGame) {
+    const option = Array.from(gameSelect.options).find((item) => item.dataset.gameSlug === requestedGame);
+    if (option) {
+      gameSelect.value = option.value;
+    }
+  }
 
   supportForm.addEventListener('submit', async function (event) {
     event.preventDefault();
@@ -142,6 +156,12 @@
       supportStatus.textContent = 'O pedido de suporte foi enviado. Obrigado.';
       supportStatus.className = 'support-status support-status--success';
       supportForm.reset();
+      if (requestedGame) {
+        const option = Array.from(gameSelect.options).find((item) => item.dataset.gameSlug === requestedGame);
+        if (option) {
+          gameSelect.value = option.value;
+        }
+      }
     } catch (error) {
       supportStatus.innerHTML = 'Não foi possível enviar o pedido. Contacte-nos diretamente em <a href="mailto:support@badduckstudio.com">support@badduckstudio.com</a>.';
       supportStatus.className = 'support-status support-status--error';
