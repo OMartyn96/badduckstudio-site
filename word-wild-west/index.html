@@ -1,86 +1,85 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Word Wild West | Bad Duck Studio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Página oficial de Word Wild West, jogo mobile de palavras da Bad Duck Studio. Resumo, downloads, screenshots, demo e documentos legais.">
+  <meta name="description" content="Official page for Word Wild West, a mobile word game by Bad Duck Studio. Overview, downloads, screenshots, demo and legal documents.">
   <link rel="stylesheet" href="../style.css">
   <link rel="icon" type="image/png" href="../assets/logo.png">
 </head>
-<body id="top">
+<body id="top" data-page="game">
 
 <header class="site-header">
   <div class="header-inner">
-    <a class="logo-link" href="../index.html" aria-label="Voltar à página inicial">
+    <a class="logo-link" href="../index.html" aria-label="Back to homepage" data-i18n-attr="aria-label:global.homeAria">
       <img src="../assets/logo.png" alt="Bad Duck Studio logo" class="site-logo">
     </a>
     <div class="brand-text">
       <h1>Bad Duck Studio</h1>
       <p>Word Wild West</p>
     </div>
-    <nav class="site-nav" aria-label="Navegação do jogo">
-      <a href="../index.html#jogos">Jogos</a>
-      <a href="#resumo">Resumo</a>
+    <nav class="site-nav" aria-label="Game navigation" data-i18n-attr="aria-label:game.navAria">
+      <a href="../index.html#jogos" data-i18n="global.games">Games</a>
+      <a href="#resumo" data-i18n="game.summaryNav">Overview</a>
       <a href="#media">Media</a>
-      <a href="#documentos">Documentos</a>
+      <a href="#documentos" data-i18n="global.documents">Documents</a>
     </nav>
+    <div class="language-switcher" aria-label="Language selector" data-i18n-attr="aria-label:global.languageSelector">
+      <button type="button" data-lang-button="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang-button="pt" aria-pressed="false">PT</button>
+    </div>
   </div>
 </header>
 
 <main class="game-detail-page">
   <section class="game-hero" aria-labelledby="game-title">
     <div class="game-hero-copy">
-      <p class="eyebrow">Jogo mobile</p>
+      <p class="eyebrow" data-i18n="game.heroEyebrow">Mobile game</p>
       <img class="game-lettering" src="../assets/word-wild-west-lettering.png" alt="Word Wild West" id="game-title">
-      <p>
-        Um jogo de palavras com ambiente western, pensado para sessões rápidas,
-        progressão clara e apresentação visual marcante.
+      <p data-i18n="game.heroBody">
+        Saddle up and step into a frontier where your wits are your quickest draw.
       </p>
       <div class="game-actions">
-        <span class="button disabled" aria-disabled="true">Google Play em breve</span>
-        <span class="button secondary disabled" aria-disabled="true">Screenshots em breve</span>
-        <span class="button ghost disabled" aria-disabled="true">Demo WebGL em estudo</span>
+        <span class="button disabled" aria-disabled="true" data-i18n="game.googlePlaySoon">Google Play coming soon</span>
+        <span class="button secondary disabled" aria-disabled="true" data-i18n="game.screenshotsSoon">Screenshots coming soon</span>
+        <span class="button ghost disabled" aria-disabled="true" data-i18n="game.demoStudy">WebGL demo under review</span>
       </div>
     </div>
     <div class="game-hero-icon">
-      <img src="../assets/word-wild-west-icon.png" alt="Ícone do jogo Word Wild West">
+      <img src="../assets/word-wild-west-icon.png" alt="Word Wild West game icon" data-i18n-attr="alt:game.iconAlt">
     </div>
   </section>
 
   <section id="resumo" class="section-block summary-grid" aria-labelledby="summary-title">
     <div class="card summary-card">
-      <p class="eyebrow">Resumo executivo</p>
+      <p class="eyebrow" data-i18n="game.summaryEyebrow">Executive summary</p>
       <h2 id="summary-title">Word Wild West</h2>
-      <p>
-        Word Wild West é o primeiro jogo mobile da Bad Duck Studio. A proposta junta
-        desafios de palavras com uma estética western, criando uma experiência simples
-        de entrar, fácil de reconhecer e preparada para crescer com novos modos,
-        eventos e conteúdo sazonal.
+      <p data-i18n="game.summaryP1">
+        Saddle up and step into a frontier where your wits are your quickest draw. Waves of bandits are closing in, each tied to a hidden word. Spot the right one and take them down before they get a shot off.
       </p>
-      <p>
-        Esta página centraliza tudo o que pertence ao jogo: apresentação pública,
-        futuros links de loja, screenshots, trailer, demo web e documentação legal.
+      <p data-i18n="game.summaryP2">
+        Your aim is your vocabulary, and your bullets are the words you uncover. Outsmart every enemy, survive the shootout, and prove you are the sharpest mind in the Wild West.
       </p>
     </div>
 
-    <aside class="card fact-card" aria-label="Informação rápida">
-      <h2>Informação rápida</h2>
+    <aside class="card fact-card" aria-label="Quick information" data-i18n-attr="aria-label:game.quickInfoAria">
+      <h2 data-i18n="game.quickInfoTitle">Quick information</h2>
       <dl class="fact-list">
         <div>
-          <dt>Estado</dt>
-          <dd>Em desenvolvimento</dd>
+          <dt data-i18n="game.statusLabel">Status</dt>
+          <dd data-i18n="game.status">In development</dd>
         </div>
         <div>
-          <dt>Plataforma inicial</dt>
+          <dt data-i18n="game.platformLabel">Initial platform</dt>
           <dd>Android</dd>
         </div>
         <div>
-          <dt>Género</dt>
-          <dd>Palavras / Puzzle</dd>
+          <dt data-i18n="game.genreLabel">Genre</dt>
+          <dd data-i18n="game.genreValue">Words / Puzzle</dd>
         </div>
         <div>
-          <dt>Estúdio</dt>
+          <dt data-i18n="game.studioLabel">Studio</dt>
           <dd>BAD DUCK STUDIO, LDA</dd>
         </div>
       </dl>
@@ -89,46 +88,45 @@
 
   <section id="media" class="section-block roadmap-block" aria-labelledby="media-title">
     <div class="section-heading">
-      <p class="eyebrow">Próximos conteúdos</p>
-      <h2 id="media-title">Downloads, screenshots e demo</h2>
+      <p class="eyebrow" data-i18n="game.mediaEyebrow">Upcoming content</p>
+      <h2 id="media-title" data-i18n="game.mediaTitle">Downloads, screenshots and demo</h2>
     </div>
     <div class="roadmap-grid">
       <div>
         <h3>Google Play</h3>
-        <p>Quando a ficha da loja estiver publicada, o botão oficial entra nesta página.</p>
+        <p data-i18n="game.mediaGoogle">When the store listing is published, the official button will live on this page.</p>
       </div>
       <div>
-        <h3>Screenshots</h3>
-        <p>A galeria fica pronta para receber imagens reais do jogo assim que existirem.</p>
+        <h3 data-i18n="game.screenshotsTitle">Screenshots</h3>
+        <p data-i18n="game.mediaScreenshots">The gallery is ready to receive real gameplay images as soon as they exist.</p>
       </div>
       <div>
-        <h3>Demo Unity</h3>
-        <p>Uma build WebGL pode viver numa página própria e ser ligada a partir daqui.</p>
+        <h3>Unity Demo</h3>
+        <p data-i18n="game.mediaDemo">A WebGL build can live on its own page and be linked from here.</p>
       </div>
     </div>
-    <div class="placeholder-gallery" aria-label="Espaço reservado para screenshots">
-      <div>Screenshot 1</div>
-      <div>Screenshot 2</div>
-      <div>Trailer / demo</div>
+    <div class="placeholder-gallery" aria-label="Reserved screenshot space" data-i18n-attr="aria-label:game.galleryAria">
+      <div data-i18n="game.screenshotOne">Screenshot 1</div>
+      <div data-i18n="game.screenshotTwo">Screenshot 2</div>
+      <div data-i18n="game.trailerDemo">Trailer / demo</div>
     </div>
   </section>
 
   <section id="documentos" class="card legal-home" aria-labelledby="legal-title">
     <p class="eyebrow">Word Wild West</p>
-    <h2 id="legal-title">Documentos legais</h2>
+    <h2 id="legal-title" data-i18n="global.legalDocs">Legal documents</h2>
 
-    <p>
-      Documentos específicos do jogo Word Wild West, separados da página inicial para
-      manter o site organizado quando houver mais jogos.
+    <p data-i18n="game.legalIntro">
+      Game-specific documents for Word Wild West, separated from the homepage to keep the site organized as more games are added.
     </p>
 
     <p class="meta">
-      Data efetiva: 22 de maio de 2026<br>
-      Aplicação: WordWildWest<br>
+      <span data-i18n="game.effectiveDate">Effective date: 22 May 2026</span><br>
+      <span data-i18n="game.application">Application: WordWildWest</span><br>
       Service Provider: BAD DUCK STUDIO, LDA<br>
       Registered office: Rua das Acacias, 40A, 3090-380 Figueira da Foz, Portugal<br>
       Company registration / VAT number: PT 518249891<br>
-      Contacto: <a href="mailto:contact@badduckstudio.com">contact@badduckstudio.com</a>
+      <span data-i18n="global.contactLabel">Contact</span>: <a href="mailto:contact@badduckstudio.com">contact@badduckstudio.com</a>
     </p>
 
     <h3 id="english">English</h3>
@@ -243,5 +241,6 @@
   </div>
 </footer>
 
+<script src="../assets/site-i18n.js"></script>
 </body>
 </html>

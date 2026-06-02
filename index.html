@@ -1,29 +1,33 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Bad Duck Studio | Jogos Mobile Indie</title>
+  <title>Bad Duck Studio | Indie Mobile Games</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Bad Duck Studio cria jogos mobile indie. Conhece os jogos do estúdio e acompanha novidades, demos e links de download.">
+  <meta name="description" content="Bad Duck Studio creates indie mobile games. Discover our games and follow news, demos and download links.">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="assets/logo.png">
 </head>
-<body id="top">
+<body id="top" data-page="home">
 
 <header class="site-header">
   <div class="header-inner">
-    <a class="logo-link" href="index.html" aria-label="Voltar à página inicial">
+    <a class="logo-link" href="index.html" aria-label="Back to homepage" data-i18n-attr="aria-label:global.homeAria">
       <img src="assets/logo.png" alt="Bad Duck Studio logo" class="site-logo">
     </a>
     <div class="brand-text">
       <h1>Bad Duck Studio</h1>
-      <p>Estúdio indie de jogos mobile</p>
+      <p data-i18n="global.tagline">Indie mobile game studio</p>
     </div>
-    <nav class="site-nav" aria-label="Navegação principal">
-      <a href="#jogos">Jogos</a>
-      <a href="#sobre">Sobre</a>
-      <a href="mailto:contact@badduckstudio.com">Contacto</a>
+    <nav class="site-nav" aria-label="Primary navigation" data-i18n-attr="aria-label:global.primaryNav">
+      <a href="#jogos" data-i18n="global.games">Games</a>
+      <a href="#sobre" data-i18n="global.about">About</a>
+      <a href="mailto:contact@badduckstudio.com" data-i18n="global.contact">Contact</a>
     </nav>
+    <div class="language-switcher" aria-label="Language selector" data-i18n-attr="aria-label:global.languageSelector">
+      <button type="button" data-lang-button="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang-button="pt" aria-pressed="false">PT</button>
+    </div>
   </div>
 </header>
 
@@ -31,14 +35,13 @@
   <section class="hero-section studio-hero" aria-labelledby="hero-title">
     <div class="hero-copy">
       <p class="eyebrow">Bad Duck Studio</p>
-      <h2 id="hero-title">Jogos mobile com identidade própria, feitos para crescer.</h2>
-      <p>
-        A página inicial é a montra do estúdio: apresenta os jogos, mostra o que está
-        em desenvolvimento e encaminha cada projeto para a sua própria página.
+      <h2 id="hero-title" data-i18n="home.heroTitle">Mobile games with their own identity, built to grow.</h2>
+      <p data-i18n="home.heroBody">
+        The homepage is the studio showcase: it presents our games, shows what is in development and sends each project to its own page.
       </p>
       <div class="button-row">
-        <a class="button" href="#jogos">Ver jogos</a>
-        <a class="button secondary" href="#sobre">Sobre o estúdio</a>
+        <a class="button" href="#jogos" data-i18n="home.viewGames">View games</a>
+        <a class="button secondary" href="#sobre" data-i18n="home.aboutStudio">About the studio</a>
       </div>
     </div>
     <div class="hero-art" aria-hidden="true">
@@ -48,60 +51,58 @@
 
   <section id="jogos" class="section-block" aria-labelledby="games-title">
     <div class="section-heading">
-      <p class="eyebrow">Lista de jogos</p>
-      <h2 id="games-title">Jogos do estúdio</h2>
+      <p class="eyebrow" data-i18n="home.gamesEyebrow">Game list</p>
+      <h2 id="games-title" data-i18n="home.gamesTitle">Studio games</h2>
     </div>
 
     <div class="games-grid">
       <article id="word-wild-west" class="game-card featured-game home-game-card">
         <div class="game-media single-game-media">
-          <img class="game-icon" src="assets/word-wild-west-icon.png" alt="Ícone do jogo Word Wild West">
+          <img class="game-icon" src="assets/word-wild-west-icon.png" alt="Word Wild West game icon" data-i18n-attr="alt:game.iconAlt">
         </div>
         <div class="game-content">
           <div class="game-title-row">
             <h3>Word Wild West</h3>
-            <span class="status-pill">Em desenvolvimento</span>
+            <span class="status-pill" data-i18n="game.status">In development</span>
           </div>
-          <p>
-            Jogo mobile de palavras com tema western. A página própria do jogo reúne
-            resumo executivo, estado do projeto, futuros links de download e documentos legais.
+          <p data-i18n="home.gameCardBody">
+            A western word game where your vocabulary is your quickest draw. The game page gathers its overview, project status, future download links and legal documents.
           </p>
-          <div class="game-actions" aria-label="Ações do jogo Word Wild West">
-            <a class="button" href="word-wild-west/">Ver jogo</a>
-            <a class="button ghost" href="word-wild-west/#documentos">Documentos legais</a>
+          <div class="game-actions" aria-label="Word Wild West actions" data-i18n-attr="aria-label:game.actionsAria">
+            <a class="button" href="word-wild-west/" data-i18n="home.viewGame">View game</a>
+            <a class="button ghost" href="word-wild-west/#documentos" data-i18n="global.legalDocs">Legal documents</a>
           </div>
         </div>
       </article>
 
       <article class="game-card upcoming-game">
         <div class="upcoming-mark">+</div>
-        <h3>Próximos jogos</h3>
-        <p>
-          Este espaço fica reservado para novos títulos da Bad Duck Studio,
-          mantendo a home preparada para crescer sem misturar documentos de vários jogos.
+        <h3 data-i18n="home.upcomingTitle">Upcoming games</h3>
+        <p data-i18n="home.upcomingBody">
+          This space is reserved for future Bad Duck Studio titles, keeping the homepage ready to grow without mixing documents from different games.
         </p>
       </article>
     </div>
   </section>
 
-  <section id="sobre" class="section-block roadmap-block" aria-labelledby="studio-title">
+  <section id="sobre" class="section-block roadmap-block about-block" aria-labelledby="studio-title">
     <div class="section-heading">
-      <p class="eyebrow">Empresa</p>
-      <h2 id="studio-title">Sobre a Bad Duck Studio</h2>
+      <p class="eyebrow" data-i18n="home.companyEyebrow">Company</p>
+      <h2 id="studio-title" data-i18n="home.aboutTitle">About Us</h2>
     </div>
-    <div class="roadmap-grid">
-      <div>
-        <h3>Foco</h3>
-        <p>Jogos mobile com identidade visual forte, loops simples de perceber e espaço para evoluir.</p>
-      </div>
-      <div>
-        <h3>Projetos</h3>
-        <p>Cada jogo terá página própria com media, downloads, demos e documentação específica.</p>
-      </div>
-      <div>
-        <h3>Contacto</h3>
-        <p>Para questões sobre jogos, loja ou privacidade: contact@badduckstudio.com.</p>
-      </div>
+    <div class="about-prose">
+      <p data-i18n="home.aboutP1">
+        Bad Duck Studio is a small indie team based in Portugal, creating games with heart for players around the world. We are developers, dreamers, and lifelong gamers who believe that great ideas deserve to be brought to life, no matter the size of the team behind them.
+      </p>
+      <p data-i18n="home.aboutP2">
+        We focus on crafting fun, accessible mobile experiences, built from curiosity, creativity, and a genuine love for interactive worlds. Every project is a chance to learn, experiment, and bring a bit of joy to everyone who picks up our games. And while we love exploring new ideas, we are equally committed to polishing them, striving for quality in every detail.
+      </p>
+      <p data-i18n="home.aboutP3">
+        But we are not stopping here. Our long term goal is to grow beyond mobile and bring our ideas to bigger, richer experiences on Steam. We want to build larger worlds, deeper mechanics, and games that stay with players long after the screen goes dark.
+      </p>
+      <p data-i18n="home.aboutP4">
+        We are building, improving, and levelling up one game at a time.
+      </p>
     </div>
   </section>
 </main>
@@ -112,5 +113,6 @@
   </div>
 </footer>
 
+<script src="assets/site-i18n.js"></script>
 </body>
 </html>
