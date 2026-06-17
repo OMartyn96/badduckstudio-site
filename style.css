@@ -674,6 +674,40 @@ footer {
   margin: 0 auto;
 }
 
+.footer-inner p {
+  margin: 0;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.footer-links a {
+  color: var(--accent-dark);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.footer-lre-logo-link {
+  display: inline-block;
+  margin-top: 14px;
+}
+
+.footer-lre-logo {
+  display: block;
+  width: 110px;
+  height: auto;
+  border-radius: 2px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
 .breadcrumb {
   margin-top: 0;
   font-size: 14px;
@@ -835,7 +869,8 @@ th {
   footer,
   .button-row,
   .breadcrumb,
-  .document-nav {
+  .document-nav,
+  .screen-only {
     display: none;
   }
 
