@@ -463,8 +463,7 @@ main {
     linear-gradient(90deg, rgba(45, 31, 22, 0.96) 0%, rgba(45, 31, 22, 0.78) 42%, rgba(45, 31, 22, 0.18) 74%),
     linear-gradient(180deg, rgba(45, 31, 22, 0) 58%, rgba(45, 31, 22, 0.92) 100%),
     url("assets/word-wild-west-banner.png");
-  background-position: center;
-  background-size: cover;
+background-position: center 0%;  background-size: cover;
   opacity: 0.9;
 }
 
