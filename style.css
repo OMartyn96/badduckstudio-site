@@ -553,6 +553,19 @@ main {
   border: 1px solid var(--soft-border);
   border-radius: 8px;
   background: var(--soft);
+  text-align: center;
+}
+
+.game-feature-list strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--accent-dark);
+  font-size: 16px;
+}
+
+.game-feature-list span {
+  display: block;
+  color: var(--muted);
 }
 
 .summary-card h2,
@@ -629,14 +642,6 @@ main {
   background: var(--accent-dark);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
   pointer-events: none;
-}
-
-.screenshot-rail figcaption {
-  margin-top: 8px;
-  color: var(--muted);
-  font-size: 13px;
-  font-weight: 800;
-  text-align: center;
 }
 
 .screenshot-arrow {
