@@ -88,7 +88,14 @@
       "home.aboutP1": "Bad Duck Studio is a small indie team based in Portugal, creating games with heart for players around the world. We are developers, dreamers, and lifelong gamers who believe that great ideas deserve to be brought to life, no matter the size of the team behind them.",
       "home.aboutP2": "We focus on crafting fun, accessible mobile experiences, built from curiosity, creativity, and a genuine love for interactive worlds. Every project is a chance to learn, experiment, and bring a bit of joy to everyone who picks up our games. And while we love exploring new ideas, we are equally committed to polishing them, striving for quality in every detail.",
       "home.aboutP3": "But we are not stopping here. Our long term goal is to grow beyond mobile and bring our ideas to bigger, richer experiences on Steam. We want to build larger worlds, deeper mechanics, and games that stay with players long after the screen goes dark.",
-      "home.aboutP4": "We are building, improving, and levelling up one game at a time."
+      "home.aboutP4": "We are building, improving, and levelling up one game at a time.",
+      "home.teamEyebrow": "The team",
+      "home.teamNav": "Team",
+      "home.teamTitle": "Our team",
+      "home.teamGameDesignRole": "Game Design",
+      "home.teamProgrammingRole": "Programming",
+      "home.teamArtAnimationRole": "Art & Animation",
+      "home.teamArtDesignRole": "Art & Design"
     },
     pt: {
       "global.homeAria": "Voltar à página inicial",
@@ -175,7 +182,14 @@
       "home.aboutP1": "A Bad Duck Studio é uma pequena equipa indie sediada em Portugal, a criar jogos com coração para jogadores em todo o mundo. Somos developers, sonhadores e gamers de longa data que acreditam que boas ideias merecem ganhar vida, independentemente do tamanho da equipa por trás delas.",
       "home.aboutP2": "Focamo-nos em criar experiências mobile divertidas e acessíveis, construídas a partir da curiosidade, criatividade e de um amor genuíno por mundos interativos. Cada projeto é uma oportunidade para aprender, experimentar e levar um pouco de alegria a quem pega nos nossos jogos. E embora adoremos explorar ideias novas, estamos igualmente comprometidos em poli-las, procurando qualidade em cada detalhe.",
       "home.aboutP3": "Mas não vamos ficar por aqui. O nosso objetivo a longo prazo é crescer para além do mobile e levar as nossas ideias a experiências maiores e mais ricas na Steam. Queremos construir mundos maiores, mecânicas mais profundas e jogos que fiquem com os jogadores muito depois do ecrã escurecer.",
-      "home.aboutP4": "Estamos a construir, melhorar e subir de nível, um jogo de cada vez."
+      "home.aboutP4": "Estamos a construir, melhorar e subir de nível, um jogo de cada vez.",
+      "home.teamEyebrow": "A nossa equipa",
+      "home.teamNav": "Equipa",
+      "home.teamTitle": "A nossa equipa",
+      "home.teamGameDesignRole": "Game Design",
+      "home.teamProgrammingRole": "Programação",
+      "home.teamArtAnimationRole": "Arte e Animação",
+      "home.teamArtDesignRole": "Arte e Design"
     }
   };
 
