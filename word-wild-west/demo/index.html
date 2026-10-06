@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preload" href="Build/WEBGL_Demo.framework.js.unityweb" as="fetch" crossorigin>
+    <link rel="preload" href="Build/WEBGL_Demo.wasm.unityweb" as="fetch" crossorigin>
+    <link rel="preload" href="https://media.githubusercontent.com/media/OMartyn96/badduckstudio-site/main/word-wild-west/demo/Build/WEBGL_Demo.data.unityweb" as="fetch" crossorigin>
     <title>Word Wild West Demo | Bad Duck Studio</title>
     <style>
       :root {
@@ -77,8 +80,8 @@
 
       .phone-frame {
         position: relative;
-        width: min(92vw, 430px, calc((100vh - 170px) * 9 / 16));
-        aspect-ratio: 9 / 16;
+        width: min(92vw, 340px, calc((100vh - 170px) * 270 / 800));
+        aspect-ratio: 270 / 800;
         padding: 14px;
         border: 2px solid #1b1714;
         border-radius: 34px;
@@ -127,6 +130,16 @@
         text-align: center;
       }
 
+      .loading-note small {
+        display: block;
+        max-width: 220px;
+        margin-top: 10px;
+        color: #d8d2cb;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 1.4;
+      }
+
       .screen.is-loaded .loading-note {
         display: none;
       }
@@ -147,7 +160,7 @@
         }
 
         .phone-frame {
-          width: min(96vw, calc((100vh - 190px) * 9 / 16));
+          width: min(96vw, calc((100vh - 190px) * 270 / 800));
           padding: 10px;
           border-radius: 28px;
         }
@@ -167,8 +180,11 @@
       <section class="demo-stage" aria-label="Word Wild West playable demo">
         <div class="phone-frame">
           <div class="screen" id="demo-screen">
-            <canvas id="unity-canvas" width="270" height="480" tabindex="-1"></canvas>
-            <div class="loading-note">Loading demo...</div>
+            <canvas id="unity-canvas" width="270" height="800" tabindex="-1"></canvas>
+            <div class="loading-note">
+              Loading demo...
+              <small>The first load can take a little while because the WebGL build is large.</small>
+            </div>
           </div>
         </div>
       </section>
@@ -188,8 +204,8 @@
         companyName: "BadDuckStudio",
         productName: "WordWildWest",
         productVersion: "1.0",
-        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
-        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+        matchWebGLToCanvasSize: true,
+        devicePixelRatio: 1,
       }).then((unityInstance) => {
         screen.classList.add("is-loaded");
       }).catch((message) => {
