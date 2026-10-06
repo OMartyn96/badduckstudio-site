@@ -426,6 +426,10 @@ main {
 
 .compact-links a {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
 
 .game-detail-page {
