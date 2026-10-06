@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Word Wild West Demo | Bad Duck Studio</title>
+    <style>
+      :root {
+        --bg: #f3f1ed;
+        --text: #3e3d3b;
+        --muted: #6f6c67;
+        --accent: #ec6907;
+        --accent-dark: #2f2e2c;
+        --border: #ddd8d2;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        min-height: 100%;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+      }
+
+      .demo-page {
+        min-height: 100vh;
+        display: grid;
+        grid-template-rows: auto 1fr;
+      }
+
+      .demo-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 18px clamp(16px, 4vw, 42px);
+        border-bottom: 4px solid var(--accent);
+        background: var(--accent-dark);
+        color: #ffffff;
+      }
+
+      .demo-header h1 {
+        margin: 0;
+        font-size: clamp(20px, 3vw, 30px);
+        line-height: 1.2;
+      }
+
+      .demo-header p {
+        margin: 4px 0 0;
+        color: #ebe8e3;
+      }
+
+      .demo-header a {
+        flex-shrink: 0;
+        padding: 10px 14px;
+        border-radius: 8px;
+        background: var(--accent);
+        color: #ffffff;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .demo-stage {
+        display: grid;
+        place-items: center;
+        padding: clamp(18px, 4vw, 42px);
+      }
+
+      .phone-frame {
+        position: relative;
+        width: min(92vw, 430px, calc((100vh - 170px) * 9 / 16));
+        aspect-ratio: 9 / 16;
+        padding: 14px;
+        border: 2px solid #1b1714;
+        border-radius: 34px;
+        background: #17120f;
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+      }
+
+      .phone-frame::before {
+        content: "";
+        position: absolute;
+        top: 7px;
+        left: 50%;
+        width: 34%;
+        height: 16px;
+        transform: translateX(-50%);
+        border-radius: 0 0 14px 14px;
+        background: #17120f;
+        z-index: 2;
+      }
+
+      .screen {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        border-radius: 24px;
+        background: #1f1f20;
+      }
+
+      #unity-canvas {
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: #1f1f20;
+      }
+
+      .loading-note {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+        background: #1f1f20;
+        color: #ffffff;
+        font-weight: 700;
+        text-align: center;
+      }
+
+      .screen.is-loaded .loading-note {
+        display: none;
+      }
+
+      @media (max-width: 640px) {
+        .demo-header {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .demo-header a {
+          width: 100%;
+          text-align: center;
+        }
+
+        .demo-stage {
+          padding: 12px;
+        }
+
+        .phone-frame {
+          width: min(96vw, calc((100vh - 190px) * 9 / 16));
+          padding: 10px;
+          border-radius: 28px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="demo-page">
+      <header class="demo-header">
+        <div>
+          <h1>Word Wild West Demo</h1>
+          <p>Playable WebGL demo</p>
+        </div>
+        <a href="../">Back to game page</a>
+      </header>
+
+      <section class="demo-stage" aria-label="Word Wild West playable demo">
+        <div class="phone-frame">
+          <div class="screen" id="demo-screen">
+            <canvas id="unity-canvas" width="270" height="480" tabindex="-1"></canvas>
+            <div class="loading-note">Loading demo...</div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="Build/WEBGL_Demo.loader.js"></script>
+    <script>
+      const canvas = document.querySelector("#unity-canvas");
+      const screen = document.querySelector("#demo-screen");
+
+      createUnityInstance(canvas, {
+        arguments: [],
+        dataUrl: "Build/WEBGL_Demo.data.unityweb",
+        frameworkUrl: "Build/WEBGL_Demo.framework.js.unityweb",
+        codeUrl: "Build/WEBGL_Demo.wasm.unityweb",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "BadDuckStudio",
+        productName: "WordWildWest",
+        productVersion: "1.0",
+        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+      }).then((unityInstance) => {
+        screen.classList.add("is-loaded");
+      }).catch((message) => {
+        alert(message);
+      });
+    </script>
+  </body>
+</html>
