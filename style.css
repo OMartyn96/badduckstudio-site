@@ -375,6 +375,7 @@ main {
   border: 1px solid var(--border);
   border-radius: 8px;
   background: #ffffff;
+  overflow: visible;
 }
 
 .roadmap-grid {
@@ -463,7 +464,8 @@ main {
     linear-gradient(90deg, rgba(45, 31, 22, 0.96) 0%, rgba(45, 31, 22, 0.78) 42%, rgba(45, 31, 22, 0.18) 74%),
     linear-gradient(180deg, rgba(45, 31, 22, 0) 58%, rgba(45, 31, 22, 0.92) 100%),
     url("assets/word-wild-west-banner.png");
-background-position: center 0%;  background-size: cover;
+  background-position: center 0%;
+  background-size: cover;
   opacity: 0.9;
 }
 
@@ -495,6 +497,12 @@ background-position: center 0%;  background-size: cover;
   object-position: left center;
   margin: 6px 0 18px;
   filter: drop-shadow(0 16px 14px rgba(0, 0, 0, 0.34));
+}
+
+.game-lettering--hero {
+  width: min(100%, 430px);
+  max-height: 116px;
+  margin: 8px 0 14px;
 }
 
 .game-hero-icon {
@@ -578,22 +586,125 @@ background-position: center 0%;  background-size: cover;
   font-weight: 700;
 }
 
-.placeholder-gallery {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
+.screenshot-carousel {
+  position: relative;
   margin-top: 24px;
 }
 
-.placeholder-gallery div {
-  min-height: 160px;
+.screenshot-rail {
+  display: flex;
+  gap: 16px;
+  margin-top: 0;
+  padding: 4px 0 14px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: 0;
+  scrollbar-width: none;
+  cursor: grab;
+  user-select: none;
+}
+
+.screenshot-rail::-webkit-scrollbar {
+  display: none;
+}
+
+.screenshot-rail.is-dragging {
+  cursor: grabbing;
+}
+
+.screenshot-rail figure {
+  flex: 0 0 clamp(190px, 24vw, 260px);
+  margin: 0;
+  scroll-snap-align: start;
+}
+
+.screenshot-rail img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  border: 1px solid var(--soft-border);
+  border-radius: 8px;
+  background: var(--accent-dark);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
+  pointer-events: none;
+}
+
+.screenshot-rail figcaption {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.screenshot-arrow {
+  position: absolute;
+  top: 46%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 92px;
+  height: 56px;
   display: grid;
   place-items: center;
-  border: 1px dashed var(--soft-border);
-  border-radius: 8px;
-  background: var(--soft);
-  color: var(--muted);
-  font-weight: 800;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.screenshot-arrow:hover,
+.screenshot-arrow:focus-visible {
+  outline: 0;
+}
+
+.screenshot-arrow img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter:
+    drop-shadow(1px 0 0 rgba(255, 255, 255, 0.88))
+    drop-shadow(-1px 0 0 rgba(255, 255, 255, 0.88))
+    drop-shadow(0 1px 0 rgba(255, 255, 255, 0.88))
+    drop-shadow(0 -1px 0 rgba(255, 255, 255, 0.88))
+    drop-shadow(0 8px 12px rgba(0, 0, 0, 0.34));
+  pointer-events: none;
+  transition: filter 160ms ease, transform 160ms ease;
+}
+
+.screenshot-arrow:hover img,
+.screenshot-arrow:focus-visible img {
+  filter:
+    drop-shadow(1px 0 0 rgba(236, 105, 7, 0.95))
+    drop-shadow(-1px 0 0 rgba(236, 105, 7, 0.95))
+    drop-shadow(0 1px 0 rgba(236, 105, 7, 0.95))
+    drop-shadow(0 -1px 0 rgba(236, 105, 7, 0.95))
+    drop-shadow(0 10px 14px rgba(0, 0, 0, 0.4));
+}
+
+.screenshot-arrow--prev {
+  left: -46px;
+}
+
+.screenshot-arrow--prev img {
+  transform: scaleX(-1);
+}
+
+.screenshot-arrow--prev:hover img,
+.screenshot-arrow--prev:focus-visible img {
+  transform: scaleX(-1) translateX(3px);
+}
+
+.screenshot-arrow--next {
+  right: -46px;
+}
+
+.screenshot-arrow--next:hover img,
+.screenshot-arrow--next:focus-visible img {
+  transform: translateX(3px);
 }
 
 .card {
@@ -1001,8 +1112,7 @@ th {
   .summary-grid,
   .game-feature-list,
   .roadmap-grid,
-  .compact-links,
-  .placeholder-gallery {
+  .compact-links {
     grid-template-columns: 1fr;
   }
 
@@ -1059,6 +1169,25 @@ th {
   .game-card,
   .roadmap-block {
     padding: 18px;
+  }
+
+  .screenshot-rail {
+    padding: 4px 34px 14px;
+    scroll-padding-left: 34px;
+  }
+
+  .screenshot-arrow {
+    top: 45%;
+    width: 64px;
+    height: 40px;
+  }
+
+  .screenshot-arrow--prev {
+    left: -4px;
+  }
+
+  .screenshot-arrow--next {
+    right: -4px;
   }
 
   .game-media {

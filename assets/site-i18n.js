@@ -28,6 +28,7 @@
       "game.heroBody": "Spell fast to defeat bandits in this action-packed Wild West word game!",
       "game.googlePlaySoon": "Google Play coming soon",
       "game.screenshotsSoon": "Screenshots coming soon",
+      "game.viewScreenshots": "View screenshots",
       "game.demoStudy": "WebGL demo under review",
       "game.summaryEyebrow": "Executive summary",
       "game.summaryP1": "Saddle up and step into the frontier, welcome to Word Wild West, a fast-paced spelling game and word puzzle adventure where your bullets are your words, and your aim is your spelling. Waves of bandits are closing in, each tied to a word. Spell them right and take them down before they get a shot off.",
@@ -49,16 +50,29 @@
       "game.featureItems": "Special Items: Use consumables and special equipment to help you along your journey.",
       "game.featureOffline": "Play Anywhere: Enjoy the full western word game experience offline with no internet required.",
       "game.studioLabel": "Studio",
-      "game.mediaEyebrow": "Upcoming content",
-      "game.mediaTitle": "Downloads, screenshots and demo",
+      "game.mediaEyebrow": "Game media",
+      "game.mediaTitle": "Screenshots, downloads and demo",
       "game.mediaGoogle": "When the store listing is published, the official button will live on this page.",
       "game.screenshotsTitle": "Screenshots",
-      "game.mediaScreenshots": "The gallery is ready to receive real gameplay images as soon as they exist.",
+      "game.mediaScreenshots": "Browse the first store screenshots for Word Wild West. Drag the gallery sideways to see them all.",
       "game.mediaDemo": "A WebGL build can live on its own page and be linked from here.",
-      "game.galleryAria": "Reserved screenshot space",
-      "game.screenshotOne": "Screenshot 1",
-      "game.screenshotTwo": "Screenshot 2",
-      "game.trailerDemo": "Trailer / demo",
+      "game.galleryAria": "Word Wild West screenshots",
+      "game.screenshotType": "Typing challenge",
+      "game.screenshotTypeAlt": "Typing challenge screenshot",
+      "game.screenshotBandits": "Bandit waves",
+      "game.screenshotBanditsAlt": "Bandit wave screenshot",
+      "game.screenshotBoss": "Boss duels",
+      "game.screenshotBossAlt": "Boss duel screenshot",
+      "game.screenshotShop": "Shop and gear",
+      "game.screenshotShopAlt": "Shop and equipment screenshot",
+      "game.screenshotLeaderboard": "Leaderboard",
+      "game.screenshotLeaderboardAlt": "Leaderboard screenshot",
+      "game.screenshotSheriff": "Sheriff shootout",
+      "game.screenshotSheriffAlt": "Sheriff shootout screenshot",
+      "game.screenshotMap": "World map",
+      "game.screenshotMapAlt": "World map screenshot",
+      "game.prevScreenshots": "Previous screenshots",
+      "game.nextScreenshots": "Next screenshots",
       "game.legalIntro": "Game-specific documents for Word Wild West, separated from the homepage to keep the site organized as more games are added.",
       "game.effectiveDate": "Effective date: 22 May 2026",
       "game.application": "Application: WordWildWest",
@@ -104,6 +118,7 @@
       "game.heroBody": "Soletra rápido para derrotar bandidos neste jogo de palavras do Wild West cheio de ação!",
       "game.googlePlaySoon": "Google Play em breve",
       "game.screenshotsSoon": "Screenshots em breve",
+      "game.viewScreenshots": "Ver screenshots",
       "game.demoStudy": "Demo WebGL em estudo",
       "game.summaryEyebrow": "Resumo executivo",
       "game.summaryP1": "Prepara-te e entra na fronteira: bem-vindo a Word Wild West, um jogo rápido de soletrar e uma aventura de puzzle de palavras onde as tuas balas são as palavras e a tua pontaria é a ortografia. Vagas de bandidos aproximam-se, cada um ligado a uma palavra. Soletra corretamente e derrota-os antes que disparem.",
@@ -125,16 +140,29 @@
       "game.featureItems": "Itens especiais: usa consumíveis e equipamento especial para te ajudar ao longo da jornada.",
       "game.featureOffline": "Joga em qualquer lugar: desfruta da experiência western completa sem precisar de ligação à internet.",
       "game.studioLabel": "Estúdio",
-      "game.mediaEyebrow": "Próximos conteúdos",
-      "game.mediaTitle": "Downloads, screenshots e demo",
+      "game.mediaEyebrow": "Media do jogo",
+      "game.mediaTitle": "Screenshots, downloads e demo",
       "game.mediaGoogle": "Quando a ficha da loja estiver publicada, o botão oficial entra nesta página.",
       "game.screenshotsTitle": "Screenshots",
-      "game.mediaScreenshots": "A galeria fica pronta para receber imagens reais do jogo assim que existirem.",
+      "game.mediaScreenshots": "Vê os primeiros screenshots de loja do Word Wild West. Arrasta a galeria para o lado para veres todos.",
       "game.mediaDemo": "Uma build WebGL pode viver numa página própria e ser ligada a partir daqui.",
-      "game.galleryAria": "Espaço reservado para screenshots",
-      "game.screenshotOne": "Screenshot 1",
-      "game.screenshotTwo": "Screenshot 2",
-      "game.trailerDemo": "Trailer / demo",
+      "game.galleryAria": "Screenshots do Word Wild West",
+      "game.screenshotType": "Desafio de escrita",
+      "game.screenshotTypeAlt": "Screenshot do desafio de escrita",
+      "game.screenshotBandits": "Vagas de bandidos",
+      "game.screenshotBanditsAlt": "Screenshot de vaga de bandidos",
+      "game.screenshotBoss": "Duelos de boss",
+      "game.screenshotBossAlt": "Screenshot de duelo contra boss",
+      "game.screenshotShop": "Loja e equipamento",
+      "game.screenshotShopAlt": "Screenshot da loja e equipamento",
+      "game.screenshotLeaderboard": "Classificação",
+      "game.screenshotLeaderboardAlt": "Screenshot da classificação",
+      "game.screenshotSheriff": "Tiroteio do sheriff",
+      "game.screenshotSheriffAlt": "Screenshot do tiroteio do sheriff",
+      "game.screenshotMap": "Mapa do mundo",
+      "game.screenshotMapAlt": "Screenshot do mapa do mundo",
+      "game.prevScreenshots": "Screenshots anteriores",
+      "game.nextScreenshots": "Screenshots seguintes",
       "game.legalIntro": "Documentos específicos do jogo Word Wild West, separados da página inicial para manter o site organizado quando houver mais jogos.",
       "game.effectiveDate": "Data efetiva: 22 de maio de 2026",
       "game.application": "Aplicação: WordWildWest",
@@ -210,6 +238,54 @@
         // The language still changes for the current page when storage is unavailable.
       }
       translate(lang);
+    });
+  });
+
+  document.querySelectorAll("[data-drag-scroll]").forEach((rail) => {
+    let isDragging = false;
+    let startX = 0;
+    let startScrollLeft = 0;
+
+    rail.addEventListener("pointerdown", (event) => {
+      isDragging = true;
+      startX = event.clientX;
+      startScrollLeft = rail.scrollLeft;
+      rail.classList.add("is-dragging");
+      rail.setPointerCapture(event.pointerId);
+    });
+
+    rail.addEventListener("pointermove", (event) => {
+      if (!isDragging) {
+        return;
+      }
+      event.preventDefault();
+      rail.scrollLeft = startScrollLeft - (event.clientX - startX);
+    });
+
+    ["pointerup", "pointercancel", "pointerleave"].forEach((eventName) => {
+      rail.addEventListener(eventName, () => {
+        isDragging = false;
+        rail.classList.remove("is-dragging");
+      });
+    });
+  });
+
+  document.querySelectorAll("[data-scroll-button]").forEach((button) => {
+    const carousel = button.closest(".screenshot-carousel");
+    const rail = carousel && carousel.querySelector("[data-drag-scroll]");
+    if (!rail) {
+      return;
+    }
+
+    button.addEventListener("click", () => {
+      const firstCard = rail.querySelector("figure");
+      const gap = parseFloat(window.getComputedStyle(rail).gap) || 16;
+      const distance = firstCard ? firstCard.getBoundingClientRect().width + gap : rail.clientWidth * 0.75;
+      const direction = button.dataset.scrollButton === "next" ? 1 : -1;
+      rail.scrollBy({
+        left: distance * direction,
+        behavior: "smooth"
+      });
     });
   });
 

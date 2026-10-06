@@ -21,8 +21,8 @@
     </div>
     <nav class="site-nav" aria-label="Game navigation" data-i18n-attr="aria-label:game.navAria">
       <a href="../index.html#jogos" data-i18n="global.games">Games</a>
-      <a href="#resumo" data-i18n="game.summaryNav">Overview</a>
       <a href="#media">Media</a>
+      <a href="#resumo" data-i18n="game.summaryNav">Overview</a>
       <a href="#documentos" data-i18n="global.documents">Documents</a>
       <a href="../support.html?game=word-wild-west" data-i18n="global.support" data-i18n-attr="href:global.supportHrefGame">Support</a>
     </nav>
@@ -38,14 +38,74 @@
     <div class="game-hero-copy">
       <p class="eyebrow" data-i18n="game.heroEyebrow">Mobile game</p>
       <h2 id="game-title" class="sr-only">Word Wild West</h2>
+      <img class="game-lettering game-lettering--hero" src="../assets/word-wild-west-lettering.png" alt="" aria-hidden="true">
       <p data-i18n="game.heroBody">
         Spell fast to defeat bandits in this action-packed Wild West word game!
       </p>
       <div class="game-actions">
         <span class="button disabled" aria-disabled="true" data-i18n="game.googlePlaySoon">Google Play coming soon</span>
-        <span class="button secondary disabled" aria-disabled="true" data-i18n="game.screenshotsSoon">Screenshots coming soon</span>
+        <a class="button secondary" href="#media" data-i18n="game.viewScreenshots">View screenshots</a>
         <span class="button ghost disabled" aria-disabled="true" data-i18n="game.demoStudy">WebGL demo under review</span>
       </div>
+    </div>
+  </section>
+
+  <section id="media" class="section-block roadmap-block" aria-labelledby="media-title">
+    <div class="section-heading">
+      <p class="eyebrow" data-i18n="game.mediaEyebrow">Game media</p>
+      <h2 id="media-title" data-i18n="game.mediaTitle">Screenshots, downloads and demo</h2>
+    </div>
+    <div class="roadmap-grid">
+      <div>
+        <h3>Google Play</h3>
+        <p data-i18n="game.mediaGoogle">When the store listing is published, the official button will live on this page.</p>
+      </div>
+      <div>
+        <h3 data-i18n="game.screenshotsTitle">Screenshots</h3>
+        <p data-i18n="game.mediaScreenshots">Browse the first store screenshots for Word Wild West. Drag the gallery sideways to see them all.</p>
+      </div>
+      <div>
+        <h3>Unity Demo</h3>
+        <p data-i18n="game.mediaDemo">A WebGL build can live on its own page and be linked from here.</p>
+      </div>
+    </div>
+    <div class="screenshot-carousel">
+      <button class="screenshot-arrow screenshot-arrow--prev" type="button" data-scroll-button="prev" aria-label="Previous screenshots" data-i18n-attr="aria-label:game.prevScreenshots">
+        <img src="../assets/pistol-next.png" alt="" aria-hidden="true">
+      </button>
+      <div class="screenshot-rail" aria-label="Word Wild West screenshots" data-i18n-attr="aria-label:game.galleryAria" data-drag-scroll>
+        <figure>
+          <img src="../assets/www-screenshot-01-type.png" alt="Typing challenge screenshot" data-i18n-attr="alt:game.screenshotTypeAlt">
+          <figcaption data-i18n="game.screenshotType">Typing challenge</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/www-screenshot-02-bandits.png" alt="Bandit wave screenshot" data-i18n-attr="alt:game.screenshotBanditsAlt">
+          <figcaption data-i18n="game.screenshotBandits">Bandit waves</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/www-screenshot-03-boss.png" alt="Boss duel screenshot" data-i18n-attr="alt:game.screenshotBossAlt">
+          <figcaption data-i18n="game.screenshotBoss">Boss duels</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/www-screenshot-04-shop.png" alt="Shop and equipment screenshot" data-i18n-attr="alt:game.screenshotShopAlt">
+          <figcaption data-i18n="game.screenshotShop">Shop and gear</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/www-screenshot-05-leaderboard.png" alt="Leaderboard screenshot" data-i18n-attr="alt:game.screenshotLeaderboardAlt">
+          <figcaption data-i18n="game.screenshotLeaderboard">Leaderboard</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/www-screenshot-06-sheriff.png" alt="Sheriff shootout screenshot" data-i18n-attr="alt:game.screenshotSheriffAlt">
+          <figcaption data-i18n="game.screenshotSheriff">Sheriff shootout</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/www-screenshot-07-map.png" alt="World map screenshot" data-i18n-attr="alt:game.screenshotMapAlt">
+          <figcaption data-i18n="game.screenshotMap">World map</figcaption>
+        </figure>
+      </div>
+      <button class="screenshot-arrow screenshot-arrow--next" type="button" data-scroll-button="next" aria-label="Next screenshots" data-i18n-attr="aria-label:game.nextScreenshots">
+        <img src="../assets/pistol-next.png" alt="" aria-hidden="true">
+      </button>
     </div>
   </section>
 
@@ -99,32 +159,6 @@
       <li data-i18n="game.featureItems">Special Items: Use consumables and special equipment to help you along your journey.</li>
       <li data-i18n="game.featureOffline">Play Anywhere: Enjoy the full western word game experience offline with no internet required.</li>
     </ul>
-  </section>
-
-  <section id="media" class="section-block roadmap-block" aria-labelledby="media-title">
-    <div class="section-heading">
-      <p class="eyebrow" data-i18n="game.mediaEyebrow">Upcoming content</p>
-      <h2 id="media-title" data-i18n="game.mediaTitle">Downloads, screenshots and demo</h2>
-    </div>
-    <div class="roadmap-grid">
-      <div>
-        <h3>Google Play</h3>
-        <p data-i18n="game.mediaGoogle">When the store listing is published, the official button will live on this page.</p>
-      </div>
-      <div>
-        <h3 data-i18n="game.screenshotsTitle">Screenshots</h3>
-        <p data-i18n="game.mediaScreenshots">The gallery is ready to receive real gameplay images as soon as they exist.</p>
-      </div>
-      <div>
-        <h3>Unity Demo</h3>
-        <p data-i18n="game.mediaDemo">A WebGL build can live on its own page and be linked from here.</p>
-      </div>
-    </div>
-    <div class="placeholder-gallery" aria-label="Reserved screenshot space" data-i18n-attr="aria-label:game.galleryAria">
-      <div data-i18n="game.screenshotOne">Screenshot 1</div>
-      <div data-i18n="game.screenshotTwo">Screenshot 2</div>
-      <div data-i18n="game.trailerDemo">Trailer / demo</div>
-    </div>
   </section>
 
   <section id="documentos" class="card legal-home" aria-labelledby="legal-title">
