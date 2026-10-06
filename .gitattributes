@@ -1,1 +1,1 @@
-*.unityweb filter=lfs diff=lfs merge=lfs -text
+word-wild-west/demo/Build/WEBGL_Demo.data.unityweb filter=lfs diff=lfs merge=lfs -text
