@@ -194,6 +194,21 @@
         height: min(calc(100dvh - 116px), calc(98vw * 16 / 9));
       }
 
+      .demo-page[data-demo-size="landscape"] .demo-layout {
+        grid-template-columns: 1fr;
+        width: min(98vw, 1280px);
+      }
+
+      .demo-page[data-demo-size="landscape"] .demo-tip {
+        display: none;
+      }
+
+      .demo-page[data-demo-size="landscape"] .demo-shell {
+        width: min(98vw, 1280px, calc((100dvh - 152px) * 16 / 9));
+        height: auto;
+        aspect-ratio: 16 / 9;
+      }
+
       .screen {
         position: relative;
         width: 100%;
@@ -271,6 +286,11 @@
         .demo-page[data-demo-size="focus"] .demo-shell {
           height: min(calc(100dvh - 154px), calc(96vw * 16 / 9));
         }
+
+        .demo-page[data-demo-size="landscape"] .demo-shell {
+          width: min(96vw, calc((100dvh - 196px) * 16 / 9));
+          height: auto;
+        }
       }
 
       @media (max-width: 640px) {
@@ -301,6 +321,11 @@
         .demo-page[data-demo-size="focus"] .demo-shell {
           height: min(calc(100dvh - 176px), calc(96vw * 16 / 9));
         }
+
+        .demo-page[data-demo-size="landscape"] .demo-shell {
+          width: min(96vw, calc((100dvh - 216px) * 16 / 9));
+          height: auto;
+        }
       }
     </style>
   </head>
@@ -320,6 +345,7 @@
           <button class="demo-size-button" type="button" data-demo-size-button="compact" aria-pressed="false">Compact</button>
           <button class="demo-size-button" type="button" data-demo-size-button="fit" aria-pressed="true">Fit Page</button>
           <button class="demo-size-button" type="button" data-demo-size-button="focus" aria-pressed="false">Focus</button>
+          <button class="demo-size-button" type="button" data-demo-size-button="landscape" aria-pressed="false">Landscape Test</button>
         </div>
 
         <div class="demo-layout">
