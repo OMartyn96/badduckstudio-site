@@ -24,7 +24,7 @@
 
       html,
       body {
-        min-height: 100%;
+        height: 100%;
       }
 
       body {
@@ -35,9 +35,11 @@
       }
 
       .demo-page {
-        min-height: 100vh;
+        height: 100vh;
+        height: 100dvh;
         display: grid;
         grid-template-rows: auto 1fr;
+        overflow: hidden;
       }
 
       .demo-header {
@@ -77,16 +79,18 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: clamp(12px, 2.4vw, 24px);
+        min-height: 0;
+        padding: clamp(8px, 1.5vw, 16px);
       }
 
       .demo-layout {
         display: grid;
-        grid-template-columns: minmax(180px, 240px) auto minmax(180px, 240px);
+        grid-template-columns: minmax(170px, 220px) auto minmax(170px, 220px);
         align-items: center;
         justify-content: center;
-        gap: clamp(16px, 3vw, 34px);
-        width: min(96vw, 1040px);
+        gap: clamp(12px, 2.2vw, 28px);
+        width: min(98vw, 1160px);
+        max-height: 100%;
       }
 
       .demo-tip {
@@ -126,7 +130,8 @@
 
       .demo-shell {
         position: relative;
-        width: min(96vw, 460px, calc((100vh - 118px) * 9 / 16));
+        width: auto;
+        height: min(calc(100dvh - 96px), calc((98vw - 496px) * 16 / 9));
         aspect-ratio: 9 / 16;
         padding: 10px;
         border: 2px solid #1b1714;
@@ -177,19 +182,12 @@
         display: none;
       }
 
-      @media (max-width: 640px) {
-        .demo-header {
-          align-items: flex-start;
-          flex-direction: column;
-        }
-
-        .demo-header a {
-          width: 100%;
-          text-align: center;
-        }
-
-        .demo-stage {
-          padding: 12px;
+      @media (max-width: 960px) {
+        .demo-page {
+          min-height: 100vh;
+          min-height: 100dvh;
+          height: auto;
+          overflow: visible;
         }
 
         .demo-layout {
@@ -208,7 +206,28 @@
 
         .demo-shell {
           order: 1;
-          width: min(96vw, calc((100vh - 170px) * 9 / 16));
+          width: auto;
+          height: min(calc(100dvh - 150px), calc(96vw * 16 / 9));
+        }
+      }
+
+      @media (max-width: 640px) {
+        .demo-header {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .demo-header a {
+          width: 100%;
+          text-align: center;
+        }
+
+        .demo-stage {
+          padding: 12px;
+        }
+
+        .demo-shell {
+          height: min(calc(100dvh - 170px), calc(96vw * 16 / 9));
           padding: 8px;
           border-radius: 14px;
         }
