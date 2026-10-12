@@ -79,8 +79,41 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        gap: 12px;
         min-height: 0;
         padding: clamp(8px, 1.5vw, 16px);
+      }
+
+      .demo-size-controls {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
+
+      .demo-size-controls span {
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .demo-size-button {
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        padding: 8px 13px;
+        background: #ffffff;
+        color: var(--text);
+        cursor: pointer;
+        font: inherit;
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .demo-size-button[aria-pressed="true"] {
+        border-color: var(--accent);
+        background: var(--accent);
+        color: #ffffff;
       }
 
       .demo-layout {
@@ -131,13 +164,34 @@
       .demo-shell {
         position: relative;
         width: auto;
-        height: min(calc(100dvh - 96px), calc((98vw - 496px) * 16 / 9));
+        height: min(calc(100dvh - 152px), calc((98vw - 496px) * 16 / 9));
         aspect-ratio: 9 / 16;
         padding: 10px;
         border: 2px solid #1b1714;
         border-radius: 18px;
         background: #17120f;
         box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+      }
+
+      .demo-page[data-demo-size="compact"] .demo-shell {
+        height: min(620px, calc(100dvh - 152px), calc((98vw - 496px) * 16 / 9));
+      }
+
+      .demo-page[data-demo-size="focus"] .demo-header {
+        padding-block: 10px;
+      }
+
+      .demo-page[data-demo-size="focus"] .demo-layout {
+        grid-template-columns: 1fr;
+        width: 98vw;
+      }
+
+      .demo-page[data-demo-size="focus"] .demo-tip {
+        display: none;
+      }
+
+      .demo-page[data-demo-size="focus"] .demo-shell {
+        height: min(calc(100dvh - 116px), calc(98vw * 16 / 9));
       }
 
       .screen {
@@ -207,7 +261,15 @@
         .demo-shell {
           order: 1;
           width: auto;
-          height: min(calc(100dvh - 150px), calc(96vw * 16 / 9));
+          height: min(calc(100dvh - 196px), calc(96vw * 16 / 9));
+        }
+
+        .demo-page[data-demo-size="compact"] .demo-shell {
+          height: min(600px, calc(100dvh - 196px), calc(96vw * 16 / 9));
+        }
+
+        .demo-page[data-demo-size="focus"] .demo-shell {
+          height: min(calc(100dvh - 154px), calc(96vw * 16 / 9));
         }
       }
 
@@ -227,15 +289,23 @@
         }
 
         .demo-shell {
-          height: min(calc(100dvh - 170px), calc(96vw * 16 / 9));
+          height: min(calc(100dvh - 216px), calc(96vw * 16 / 9));
           padding: 8px;
           border-radius: 14px;
+        }
+
+        .demo-page[data-demo-size="compact"] .demo-shell {
+          height: min(540px, calc(100dvh - 216px), calc(96vw * 16 / 9));
+        }
+
+        .demo-page[data-demo-size="focus"] .demo-shell {
+          height: min(calc(100dvh - 176px), calc(96vw * 16 / 9));
         }
       }
     </style>
   </head>
   <body>
-    <main class="demo-page">
+    <main class="demo-page" data-demo-size="fit">
       <header class="demo-header">
         <div>
           <h1>Word Wild West Demo</h1>
@@ -245,6 +315,13 @@
       </header>
 
       <section class="demo-stage" aria-label="Word Wild West playable demo">
+        <div class="demo-size-controls" aria-label="Demo display size">
+          <span>Display size</span>
+          <button class="demo-size-button" type="button" data-demo-size-button="compact" aria-pressed="false">Compact</button>
+          <button class="demo-size-button" type="button" data-demo-size-button="fit" aria-pressed="true">Fit Page</button>
+          <button class="demo-size-button" type="button" data-demo-size-button="focus" aria-pressed="false">Focus</button>
+        </div>
+
         <div class="demo-layout">
           <aside class="demo-tip demo-tip--goal">
             <h2>Goal</h2>
@@ -277,6 +354,18 @@
     <script>
       const canvas = document.querySelector("#unity-canvas");
       const screen = document.querySelector("#demo-screen");
+      const page = document.querySelector(".demo-page");
+      const sizeButtons = document.querySelectorAll("[data-demo-size-button]");
+
+      sizeButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          page.dataset.demoSize = button.dataset.demoSizeButton;
+          sizeButtons.forEach((item) => {
+            item.setAttribute("aria-pressed", String(item === button));
+          });
+          window.setTimeout(() => window.dispatchEvent(new Event("resize")), 50);
+        });
+      });
 
       createUnityInstance(canvas, {
         arguments: [],
