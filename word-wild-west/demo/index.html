@@ -92,13 +92,23 @@
         gap: 8px;
       }
 
-      .demo-size-controls span {
+      .demo-control-group {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
+
+      .demo-size-controls span,
+      .fullscreen-button {
         color: var(--muted);
         font-size: 13px;
         font-weight: 700;
       }
 
-      .demo-size-button {
+      .demo-size-button,
+      .fullscreen-button {
         border: 1px solid var(--border);
         border-radius: 999px;
         padding: 8px 13px;
@@ -161,6 +171,11 @@
         padding-left: 18px;
       }
 
+      .demo-player {
+        display: grid;
+        place-items: center;
+      }
+
       .demo-shell {
         position: relative;
         width: auto;
@@ -194,17 +209,51 @@
         height: min(calc(100dvh - 116px), calc(98vw * 16 / 9));
       }
 
-      .demo-page[data-demo-size="landscape"] .demo-layout {
+      .demo-page[data-demo-aspect="landscape"] .demo-layout {
         grid-template-columns: 1fr;
         width: min(98vw, 1280px);
       }
 
-      .demo-page[data-demo-size="landscape"] .demo-tip {
+      .demo-page[data-demo-aspect="landscape"] .demo-tip,
+      .demo-page[data-demo-size="focus"] .demo-tip {
         display: none;
       }
 
-      .demo-page[data-demo-size="landscape"] .demo-shell {
+      .demo-page[data-demo-aspect="landscape"] .demo-shell {
         width: min(98vw, 1280px, calc((100dvh - 152px) * 16 / 9));
+        height: auto;
+        aspect-ratio: 16 / 9;
+      }
+
+      .demo-page[data-demo-aspect="landscape"][data-demo-size="compact"] .demo-shell {
+        width: min(860px, 98vw, calc((100dvh - 152px) * 16 / 9));
+      }
+
+      .demo-page[data-demo-aspect="landscape"][data-demo-size="focus"] .demo-shell {
+        width: min(98vw, 1440px, calc((100dvh - 116px) * 16 / 9));
+      }
+
+      .demo-player:fullscreen {
+        width: 100vw;
+        height: 100vh;
+        height: 100dvh;
+        padding: 16px;
+        background: #11100f;
+      }
+
+      .demo-player:fullscreen .demo-shell {
+        border-radius: 12px;
+        box-shadow: none;
+      }
+
+      .demo-page[data-demo-aspect="portrait"] .demo-player:fullscreen .demo-shell {
+        width: auto;
+        height: min(calc(100dvh - 32px), calc((100vw - 32px) * 16 / 9));
+        aspect-ratio: 9 / 16;
+      }
+
+      .demo-page[data-demo-aspect="landscape"] .demo-player:fullscreen .demo-shell {
+        width: min(calc(100vw - 32px), calc((100dvh - 32px) * 16 / 9));
         height: auto;
         aspect-ratio: 16 / 9;
       }
@@ -287,9 +336,17 @@
           height: min(calc(100dvh - 154px), calc(96vw * 16 / 9));
         }
 
-        .demo-page[data-demo-size="landscape"] .demo-shell {
+        .demo-page[data-demo-aspect="landscape"] .demo-shell {
           width: min(96vw, calc((100dvh - 196px) * 16 / 9));
           height: auto;
+        }
+
+        .demo-page[data-demo-aspect="landscape"][data-demo-size="compact"] .demo-shell {
+          width: min(760px, 96vw, calc((100dvh - 196px) * 16 / 9));
+        }
+
+        .demo-page[data-demo-aspect="landscape"][data-demo-size="focus"] .demo-shell {
+          width: min(96vw, calc((100dvh - 154px) * 16 / 9));
         }
       }
 
@@ -322,15 +379,23 @@
           height: min(calc(100dvh - 176px), calc(96vw * 16 / 9));
         }
 
-        .demo-page[data-demo-size="landscape"] .demo-shell {
+        .demo-page[data-demo-aspect="landscape"] .demo-shell {
           width: min(96vw, calc((100dvh - 216px) * 16 / 9));
           height: auto;
+        }
+
+        .demo-page[data-demo-aspect="landscape"][data-demo-size="compact"] .demo-shell {
+          width: min(96vw, calc((100dvh - 216px) * 16 / 9));
+        }
+
+        .demo-page[data-demo-aspect="landscape"][data-demo-size="focus"] .demo-shell {
+          width: min(96vw, calc((100dvh - 176px) * 16 / 9));
         }
       }
     </style>
   </head>
   <body>
-    <main class="demo-page" data-demo-size="fit">
+    <main class="demo-page" data-demo-size="fit" data-demo-aspect="portrait">
       <header class="demo-header">
         <div>
           <h1>Word Wild West Demo</h1>
@@ -341,11 +406,18 @@
 
       <section class="demo-stage" aria-label="Word Wild West playable demo">
         <div class="demo-size-controls" aria-label="Demo display size">
-          <span>Display size</span>
-          <button class="demo-size-button" type="button" data-demo-size-button="compact" aria-pressed="false">Compact</button>
-          <button class="demo-size-button" type="button" data-demo-size-button="fit" aria-pressed="true">Fit Page</button>
-          <button class="demo-size-button" type="button" data-demo-size-button="focus" aria-pressed="false">Focus</button>
-          <button class="demo-size-button" type="button" data-demo-size-button="landscape" aria-pressed="false">Landscape Test</button>
+          <div class="demo-control-group">
+            <span>Aspect</span>
+            <button class="demo-size-button" type="button" data-demo-aspect-button="portrait" aria-pressed="true">Portrait</button>
+            <button class="demo-size-button" type="button" data-demo-aspect-button="landscape" aria-pressed="false">Landscape</button>
+          </div>
+          <div class="demo-control-group">
+            <span>Size</span>
+            <button class="demo-size-button" type="button" data-demo-size-button="compact" aria-pressed="false">Compact</button>
+            <button class="demo-size-button" type="button" data-demo-size-button="fit" aria-pressed="true">Fit Screen</button>
+            <button class="demo-size-button" type="button" data-demo-size-button="focus" aria-pressed="false">Focus</button>
+            <button class="fullscreen-button" type="button" data-fullscreen-button>Fullscreen</button>
+          </div>
         </div>
 
         <div class="demo-layout">
@@ -354,12 +426,14 @@
             <p>Spell the word above each outlaw to take them down before they get a shot off.</p>
           </aside>
 
-          <div class="demo-shell">
-            <div class="screen" id="demo-screen">
-              <canvas id="unity-canvas" width="540" height="960" tabindex="-1"></canvas>
-              <div class="loading-note">
-                Loading demo...
-                <small>The first load can take a little while because the WebGL build is large.</small>
+          <div class="demo-player" id="demo-player">
+            <div class="demo-shell">
+              <div class="screen" id="demo-screen">
+                <canvas id="unity-canvas" width="540" height="960" tabindex="-1"></canvas>
+                <div class="loading-note">
+                  Loading demo...
+                  <small>The first load can take a little while because the WebGL build is large.</small>
+                </div>
               </div>
             </div>
           </div>
@@ -381,7 +455,14 @@
       const canvas = document.querySelector("#unity-canvas");
       const screen = document.querySelector("#demo-screen");
       const page = document.querySelector(".demo-page");
+      const player = document.querySelector("#demo-player");
       const sizeButtons = document.querySelectorAll("[data-demo-size-button]");
+      const aspectButtons = document.querySelectorAll("[data-demo-aspect-button]");
+      const fullscreenButton = document.querySelector("[data-fullscreen-button]");
+
+      function notifyUnityResize() {
+        window.setTimeout(() => window.dispatchEvent(new Event("resize")), 50);
+      }
 
       sizeButtons.forEach((button) => {
         button.addEventListener("click", () => {
@@ -389,8 +470,34 @@
           sizeButtons.forEach((item) => {
             item.setAttribute("aria-pressed", String(item === button));
           });
-          window.setTimeout(() => window.dispatchEvent(new Event("resize")), 50);
+          notifyUnityResize();
         });
+      });
+
+      aspectButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          page.dataset.demoAspect = button.dataset.demoAspectButton;
+          aspectButtons.forEach((item) => {
+            item.setAttribute("aria-pressed", String(item === button));
+          });
+          notifyUnityResize();
+        });
+      });
+
+      fullscreenButton.addEventListener("click", () => {
+        if (document.fullscreenElement) {
+          document.exitFullscreen();
+          return;
+        }
+
+        if (player.requestFullscreen) {
+          player.requestFullscreen().then(notifyUnityResize).catch(() => {});
+        }
+      });
+
+      document.addEventListener("fullscreenchange", () => {
+        fullscreenButton.textContent = document.fullscreenElement ? "Exit Fullscreen" : "Fullscreen";
+        notifyUnityResize();
       });
 
       createUnityInstance(canvas, {
